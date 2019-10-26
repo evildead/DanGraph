@@ -1,0 +1,46 @@
+{
+  "name": "dangraph",
+  "version": "0.0.1",
+  "description": "Utilities for directed and undirected graphs",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "mocha -r ts-node/register --timeout 10000 --colors test/**/*.test.ts",
+    "build": "rm -rf lib && tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
+    "lint": "eslint . --ext ts"
+  },
+  "keywords": [
+    "graph-theory",
+    "nodes",
+    "arcs",
+    "node.js",
+    "typescript"
+  ],
+  "author": "Danilo Carrabino",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evildead/DanGraph"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.4",
+    "@types/mocha": "^5.2.7",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "mocha": "^6.2.2",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.144",
+    "lodash": "^4.17.15"
+  }
+}
