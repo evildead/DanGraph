@@ -11,6 +11,8 @@ export declare enum ArcType {
 export declare class DanDirectedGraph<I, D> {
     protected _graph: Map<I, DanNodeAndDirectedArcs<I, D>>;
     constructor();
+    static generateConsecutiveNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined>;
+    static generateRandomNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined>;
     protected _getCopyOfInnerGraph(): Map<I, DanNodeAndDirectedArcs<I, D>>;
     addNode(node: DanNode<I, D>): boolean;
     addArcToNodeId(idNode: I, arcToAdd: DanArc<I, D>, arcType: ArcType): boolean;
@@ -20,6 +22,7 @@ export declare class DanDirectedGraph<I, D> {
     protected _getALeaf(): DanNode<I, D> | undefined;
     toString(showArcWeight?: boolean): string;
     countNodes(): number;
+    isEmpty(): boolean;
     protected _getOutgoingNodesList(idNode: I): DanNode<I, D>[];
     protected _isAcyclic(): boolean;
     isAcyclic(): boolean;

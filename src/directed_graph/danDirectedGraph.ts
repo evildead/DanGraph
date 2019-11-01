@@ -2,6 +2,7 @@
 import _ from 'lodash';
 
 import { DanNode, DanArc } from '../commons';
+import { randomIntFromInterval } from '../utils/commonUtils';
 
 interface DanNodeAndDirectedArcs<I, D> {
   node: DanNode<I, D>;
@@ -19,6 +20,32 @@ export class DanDirectedGraph<I, D> {
 
   public constructor() {
     this._graph = new Map();
+  }
+
+  public static generateConsecutiveNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined> {
+    const outGraph = new DanDirectedGraph<number, undefined>();
+    if (numOfNodes > 0) {
+      outGraph.addNode({ id: 0 });
+    }
+    for (let i = 1; i < numOfNodes; ++i) {
+      outGraph.addArcToNode({ id: i - 1 }, { weight: 1, node: { id: i } }, ArcType.outgoing);
+    }
+    return outGraph;
+  }
+
+  public static generateRandomNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined> {
+    const outGraph = new DanDirectedGraph<number, undefined>();
+    for (let i = 0; i < numOfNodes; ++i) {
+      outGraph.addNode({ id: i });
+      if (i > 0 && randomIntFromInterval(1, 2) > 1) {
+        outGraph.addArcToNode(
+          { id: randomIntFromInterval(0, i - 1) },
+          { weight: 1, node: { id: i } },
+          ArcType.outgoing
+        );
+      }
+    }
+    return outGraph;
   }
 
   /**
@@ -198,11 +225,25 @@ export class DanDirectedGraph<I, D> {
 
   /**
    * countNodes
+   * @returns the number of nodes in the graph
    */
   public countNodes(): number {
     return this._graph.size;
   }
 
+  /**
+   * isEmpty
+   * @returns true if the graph does not contain any node
+   */
+  public isEmpty(): boolean {
+    return this.countNodes() < 1;
+  }
+
+  /**
+   * _getOutgoingNodesList
+   * @param idNode the id of the node to check
+   * @returns the list of outgoing nodes of idNode as array of DanNode<I, D>
+   */
   protected _getOutgoingNodesList(idNode: I): DanNode<I, D>[] {
     // idNode is not present in the graph
     if (!this._graph.has(idNode)) {
@@ -225,7 +266,7 @@ export class DanDirectedGraph<I, D> {
   protected _isAcyclic(): boolean {
     let leaf: DanNode<I, D> | undefined = undefined;
     do {
-      if (this._graph.size < 1) {
+      if (this.isEmpty()) {
         return true;
       }
       leaf = this._getALeaf();
@@ -241,6 +282,9 @@ export class DanDirectedGraph<I, D> {
    * @returns true if the graph does not contain cycles
    */
   public isAcyclic(): boolean {
+    if (this.isEmpty()) {
+      return true;
+    }
     const graphMemento = this._getCopyOfInnerGraph();
     const res = this._isAcyclic();
     this._graph = graphMemento;
