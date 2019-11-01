@@ -1,12 +1,12 @@
 // Lodash
 import _ from 'lodash';
 
-import { DanNode } from '../commons';
+import { DanNode, DanArc } from '../commons';
 
 interface DanNodeAndDirectedArcs<I, D> {
   node: DanNode<I, D>;
-  incoming: Map<I, DanNode<I, D>>;
-  outgoing: Map<I, DanNode<I, D>>;
+  incoming: Map<I, DanArc<I, D>>;
+  outgoing: Map<I, DanArc<I, D>>;
 }
 
 export enum ArcType {
@@ -47,44 +47,50 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * addNodeToId
+   * addArcToNodeId
    * @param idNode the id of the node receiving nodeToAdd
-   * @param nodeToAdd the node being added
-   * @param arcType nodeToAdd will be added among the incoming or outgoing arcs of idNode, based on the value of arcType
-   * @returns true if nodeToAdd was correctly added to the icoming/ougoing arcs of idNode; false if the idNode does not exist or if nodeToAdd was already present
+   * @param arcToAdd the arc being added
+   * @param arcType arcToAdd will be added among the incoming or outgoing arcs of idNode, based on the value of arcType
+   * @returns true if arcToAdd was correctly added to the icoming/ougoing arcs of idNode; false if the idNode does not exist or if arcToAdd was already present
    */
-  public addNodeToId(idNode: I, nodeToAdd: DanNode<I, D>, arcType: ArcType): boolean {
+  public addArcToNodeId(idNode: I, arcToAdd: DanArc<I, D>, arcType: ArcType): boolean {
     // idNode is not present in the graph
     if (!this._graph.has(idNode)) {
       return false;
     }
 
     // add nodeToAdd to graph if not already present
-    this.addNode(nodeToAdd);
+    this.addNode(arcToAdd.node);
 
     const nodeArcs = this._graph.get(idNode) as DanNodeAndDirectedArcs<I, D>;
-    const nodeToAddArcs = this._graph.get(nodeToAdd.id) as DanNodeAndDirectedArcs<I, D>;
+    const nodeToAddArcs = this._graph.get(arcToAdd.node.id) as DanNodeAndDirectedArcs<I, D>;
 
     switch (arcType) {
       case ArcType.incoming:
-        // nodeToAdd is already present
-        if (nodeArcs.incoming.has(nodeToAdd.id)) {
+        // arcToAdd.node is already present
+        if (nodeArcs.incoming.has(arcToAdd.node.id)) {
           return false;
         }
-        // add nodeToAdd among the incoming nodes of idNode
-        nodeArcs.incoming.set(nodeToAddArcs.node.id, nodeToAddArcs.node);
-        // add node among the outgoing nodes of nodeToAdd
-        nodeToAddArcs.outgoing.set(nodeArcs.node.id, nodeArcs.node);
+        // add arcToAdd among the incoming arcs of idNode
+        nodeArcs.incoming.set(arcToAdd.node.id, arcToAdd);
+        // add node among the outgoing nodes of arcToAdd.node
+        nodeToAddArcs.outgoing.set(nodeArcs.node.id, {
+          weight: arcToAdd.weight,
+          node: nodeArcs.node
+        });
         return true;
       case ArcType.outgoing:
-        // nodeToAdd is already present
-        if (nodeArcs.outgoing.has(nodeToAdd.id)) {
+        // arcToAdd.node is already present
+        if (nodeArcs.outgoing.has(arcToAdd.node.id)) {
           return false;
         }
-        // add nodeToAdd among the outgoing nodes of idNode
-        nodeArcs.outgoing.set(nodeToAddArcs.node.id, nodeToAddArcs.node);
-        // add node among the incoming nodes of nodeToAdd
-        nodeToAddArcs.incoming.set(nodeArcs.node.id, nodeArcs.node);
+        // add arcToAdd among the outgoing nodes of idNode
+        nodeArcs.outgoing.set(arcToAdd.node.id, arcToAdd);
+        // add node among the incoming nodes of arcToAdd.node
+        nodeToAddArcs.incoming.set(nodeArcs.node.id, {
+          weight: arcToAdd.weight,
+          node: nodeArcs.node
+        });
         return true;
       default:
         return false;
@@ -92,18 +98,18 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * addNodeToNode
+   * addArcToNode
    * @param node the node receiving nodeToAdd
    * @param nodeToAdd the node being added
    * @param arcType nodeToAdd will be added among the incoming or outgoing arcs of node, based on the value of arcType
    * @returns true if nodeToAdd was correctly added to the icoming/ougoing arcs of node; false if nodeToAdd was already present
    */
-  public addNodeToNode(node: DanNode<I, D>, nodeToAdd: DanNode<I, D>, arcType: ArcType): boolean {
+  public addArcToNode(node: DanNode<I, D>, arcToAdd: DanArc<I, D>, arcType: ArcType): boolean {
     // idNode is not present in the graph
     if (!this._graph.has(node.id)) {
       this.addNode(node);
     }
-    return this.addNodeToId(node.id, nodeToAdd, arcType);
+    return this.addArcToNodeId(node.id, arcToAdd, arcType);
   }
 
   /**
@@ -166,16 +172,24 @@ export class DanDirectedGraph<I, D> {
   /**
    * toString
    */
-  public toString(): string {
+  public toString(showArcWeight: boolean = false): string {
     let outStr = '';
     for (let [key, value] of this._graph) {
       let incoming = '';
       let outgoing = '';
-      for (let inKey of value.incoming.keys()) {
-        incoming = incoming.concat(`${inKey};`);
+      for (let [inKey, inArc] of value.incoming) {
+        if (showArcWeight) {
+          incoming = incoming.concat(`(node{${inKey}}-weight{${inArc.weight}});`);
+        } else {
+          incoming = incoming.concat(`${inKey};`);
+        }
       }
-      for (let outKey of value.outgoing.keys()) {
-        outgoing = outgoing.concat(`${outKey};`);
+      for (let [outKey, outArc] of value.outgoing) {
+        if (showArcWeight) {
+          outgoing = outgoing.concat(`(node{${outKey}}-weight{${outArc.weight}});`);
+        } else {
+          outgoing = outgoing.concat(`${outKey};`);
+        }
       }
       outStr = outStr.concat(`\n${key} - incoming:[${incoming}]; outgoing:[${outgoing}]\n`);
     }
@@ -187,6 +201,21 @@ export class DanDirectedGraph<I, D> {
    */
   public countNodes(): number {
     return this._graph.size;
+  }
+
+  protected _getOutgoingNodesList(idNode: I): DanNode<I, D>[] {
+    // idNode is not present in the graph
+    if (!this._graph.has(idNode)) {
+      return [];
+    }
+
+    const outgoingNodes: DanNode<I, D>[] = [];
+    const nodeArcs = this._graph.get(idNode) as DanNodeAndDirectedArcs<I, D>;
+
+    for (let outArc of nodeArcs.outgoing.values()) {
+      outgoingNodes.push(outArc.node);
+    }
+    return outgoingNodes;
   }
 
   /**
@@ -216,5 +245,36 @@ export class DanDirectedGraph<I, D> {
     const res = this._isAcyclic();
     this._graph = graphMemento;
     return res;
+  }
+
+  /**
+   * _visitNodes
+   * @param visitedNodes nodes already visited
+   * @param nextNode the next node to visit
+   */
+  protected _visitNodes(visitedNodes: Set<I>, nextNode: I): void {
+    visitedNodes.add(nextNode);
+    const outgoingNodes = this._getOutgoingNodesList(nextNode);
+    for (let outgoingNode of outgoingNodes) {
+      if (!visitedNodes.has(outgoingNode.id)) {
+        this._visitNodes(visitedNodes, outgoingNode.id);
+      }
+    }
+  }
+
+  /**
+   * sourceConnectedToAllNodes
+   * @param idNode source node to be checked
+   * @returns true if source can reach all of the nodes in the graph
+   */
+  public sourceConnectedToAllNodes(idNode: I): boolean {
+    // idNode is not present in the graph
+    if (!this._graph.has(idNode)) {
+      return false;
+    }
+
+    const visitedNodes: Set<I> = new Set();
+    this._visitNodes(visitedNodes, idNode);
+    return visitedNodes.size === this.countNodes();
   }
 }

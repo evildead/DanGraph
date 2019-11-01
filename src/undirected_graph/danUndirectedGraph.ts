@@ -1,11 +1,11 @@
-import { DanNode } from '../commons';
+import { DanNode, DanArc } from '../commons';
 
 interface DanNodeAndUndirectedArcs<I, D> {
   node: DanNode<I, D>;
-  adjacents: Map<I, DanNode<I, D>>;
+  adjacents: Map<I, DanArc<I, D>>;
 }
 
-export class DanDirectedGraph<I, D> {
+export class DanUndirectedGraph<I, D> {
   protected _graph: Map<I, DanNodeAndUndirectedArcs<I, D>>;
 
   public constructor() {
@@ -26,5 +26,31 @@ export class DanDirectedGraph<I, D> {
       adjacents: new Map()
     });
     return true;
+  }
+
+  /**
+   * countNodes
+   */
+  public countNodes(): number {
+    return this._graph.size;
+  }
+
+  /**
+   * toString
+   */
+  public toString(showArcWeight: boolean = false): string {
+    let outStr = '';
+    for (let [key, value] of this._graph) {
+      let adjacents = '';
+      for (let [adjKey, adjArc] of value.adjacents) {
+        if (showArcWeight) {
+          adjacents = adjacents.concat(`(node{${adjKey}}-weight{${adjArc.weight}});`);
+        } else {
+          adjacents = adjacents.concat(`${adjKey};`);
+        }
+      }
+      outStr = outStr.concat(`\n${key} - adjacents:[${adjacents}]\n`);
+    }
+    return outStr;
   }
 }

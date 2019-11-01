@@ -1,8 +1,8 @@
-import { DanNode } from '../commons';
+import { DanNode, DanArc } from '../commons';
 interface DanNodeAndDirectedArcs<I, D> {
     node: DanNode<I, D>;
-    incoming: Map<I, DanNode<I, D>>;
-    outgoing: Map<I, DanNode<I, D>>;
+    incoming: Map<I, DanArc<I, D>>;
+    outgoing: Map<I, DanArc<I, D>>;
 }
 export declare enum ArcType {
     incoming = "incoming",
@@ -13,14 +13,17 @@ export declare class DanDirectedGraph<I, D> {
     constructor();
     protected _getCopyOfInnerGraph(): Map<I, DanNodeAndDirectedArcs<I, D>>;
     addNode(node: DanNode<I, D>): boolean;
-    addNodeToId(idNode: I, nodeToAdd: DanNode<I, D>, arcType: ArcType): boolean;
-    addNodeToNode(node: DanNode<I, D>, nodeToAdd: DanNode<I, D>, arcType: ArcType): boolean;
+    addArcToNodeId(idNode: I, arcToAdd: DanArc<I, D>, arcType: ArcType): boolean;
+    addArcToNode(node: DanNode<I, D>, arcToAdd: DanArc<I, D>, arcType: ArcType): boolean;
     removeNode(idNode: I): boolean;
     isNodeALeaf(idNode: I): boolean;
     protected _getALeaf(): DanNode<I, D> | undefined;
-    toString(): string;
+    toString(showArcWeight?: boolean): string;
     countNodes(): number;
+    protected _getOutgoingNodesList(idNode: I): DanNode<I, D>[];
     protected _isAcyclic(): boolean;
     isAcyclic(): boolean;
+    protected _visitNodes(visitedNodes: Set<I>, nextNode: I): void;
+    sourceConnectedToAllNodes(idNode: I): boolean;
 }
 export {};
