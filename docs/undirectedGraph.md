@@ -6,7 +6,7 @@
 ## Examples
 ### The following graph is acyclic and not connected:
 
-![Undirected acyclic not-connected graph](docs/images/undirected-graph_acyclic_not-connected.png)
+![Undirected acyclic not-connected graph](images/undirected-graph_acyclic_not-connected.png)
 
 ```ts
 import { DirectedGraph, CDanNode, CDanArc } from 'dangraph';
@@ -35,7 +35,7 @@ if (myGraph.isConnected()) {
 
 ### The following graph is acyclic and connected:
 
-![Undirected acyclic connected graph](docs/images/undirected-graph_acyclic_connected.png)
+![Undirected acyclic connected graph](images/undirected-graph_acyclic_connected.png)
 
 ```ts
 import { DirectedGraph, CDanNode, CDanArc } from 'dangraph';
@@ -66,7 +66,7 @@ if (myGraph.isConnected()) {
 
 ### The following graph is not acyclic and connected:
 
-![Undirected not acyclic connected graph](docs/images/undirected-graph_cyclic_connected.png)
+![Undirected not acyclic connected graph](images/undirected-graph_cyclic_connected.png)
 
 ```ts
 import { DirectedGraph, CDanNode, CDanArc } from 'dangraph';
