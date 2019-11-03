@@ -9,8 +9,8 @@
 ![Undirected acyclic not-connected graph](images/undirected-graph_acyclic_not-connected.png)
 
 ```ts
-import { DirectedGraph, CDanNode, CDanArc } from 'dangraph';
-const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
+import { UndirectedGraph, CDanNode, CDanArc } from 'dangraph';
+const myGraph = new UndirectedGraph.DanUndirectedGraph<number, undefined>();
 
 myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }));
 myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }));
@@ -38,8 +38,8 @@ if (myGraph.isConnected()) {
 ![Undirected acyclic connected graph](images/undirected-graph_acyclic_connected.png)
 
 ```ts
-import { DirectedGraph, CDanNode, CDanArc } from 'dangraph';
-const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
+import { UndirectedGraph, CDanNode, CDanArc } from 'dangraph';
+const myGraph = new UndirectedGraph.DanUndirectedGraph<number, undefined>();
 
 myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }));
 myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }));
@@ -69,8 +69,8 @@ if (myGraph.isConnected()) {
 ![Undirected not acyclic connected graph](images/undirected-graph_cyclic_connected.png)
 
 ```ts
-import { DirectedGraph, CDanNode, CDanArc } from 'dangraph';
-const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
+import { UndirectedGraph, CDanNode, CDanArc } from 'dangraph';
+const myGraph = new UndirectedGraph.DanUndirectedGraph<number, undefined>();
 
 myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }));
 myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }));
