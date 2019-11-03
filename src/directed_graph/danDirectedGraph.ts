@@ -1,7 +1,7 @@
 // Lodash
 import _ from 'lodash';
 
-import { DanNode, DanArc } from '../commons';
+import { DanNode, DanArc, CDanNode, CDanArc } from '../commons';
 import { randomIntFromInterval } from '../utils/commonUtils';
 
 interface DanNodeAndDirectedArcs<I, D> {
@@ -25,10 +25,17 @@ export class DanDirectedGraph<I, D> {
   public static generateConsecutiveNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined> {
     const outGraph = new DanDirectedGraph<number, undefined>();
     if (numOfNodes > 0) {
-      outGraph.addNode({ id: 0 });
+      outGraph.addNode(new CDanNode({ id: 0 }));
     }
     for (let i = 1; i < numOfNodes; ++i) {
-      outGraph.addArcToNode({ id: i - 1 }, { weight: 1, node: { id: i } }, ArcType.outgoing);
+      outGraph.addArcToNode(
+        new CDanNode({ id: i - 1 }),
+        new CDanArc({
+          weight: 1,
+          node: new CDanNode({ id: i })
+        }),
+        ArcType.outgoing
+      );
     }
     return outGraph;
   }
@@ -36,11 +43,14 @@ export class DanDirectedGraph<I, D> {
   public static generateRandomNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined> {
     const outGraph = new DanDirectedGraph<number, undefined>();
     for (let i = 0; i < numOfNodes; ++i) {
-      outGraph.addNode({ id: i });
+      outGraph.addNode(new CDanNode({ id: i }));
       if (i > 0 && randomIntFromInterval(1, 2) > 1) {
         outGraph.addArcToNode(
-          { id: randomIntFromInterval(0, i - 1) },
-          { weight: 1, node: { id: i } },
+          new CDanNode({ id: randomIntFromInterval(0, i - 1) }),
+          new CDanArc({
+            weight: 1,
+            node: new CDanNode({ id: i })
+          }),
           ArcType.outgoing
         );
       }
@@ -101,10 +111,11 @@ export class DanDirectedGraph<I, D> {
         // add arcToAdd among the incoming arcs of idNode
         nodeArcs.incoming.set(arcToAdd.node.id, arcToAdd);
         // add node among the outgoing nodes of arcToAdd.node
-        nodeToAddArcs.outgoing.set(nodeArcs.node.id, {
+        nodeToAddArcs.outgoing.set(nodeArcs.node.id, new CDanArc({
           weight: arcToAdd.weight,
-          node: nodeArcs.node
-        });
+          node: nodeArcs.node,
+          labels: arcToAdd.labels ? arcToAdd.labels : undefined
+        }));
         return true;
       case ArcType.outgoing:
         // arcToAdd.node is already present
@@ -114,10 +125,11 @@ export class DanDirectedGraph<I, D> {
         // add arcToAdd among the outgoing nodes of idNode
         nodeArcs.outgoing.set(arcToAdd.node.id, arcToAdd);
         // add node among the incoming nodes of arcToAdd.node
-        nodeToAddArcs.incoming.set(nodeArcs.node.id, {
+        nodeToAddArcs.incoming.set(nodeArcs.node.id, new CDanArc({
           weight: arcToAdd.weight,
-          node: nodeArcs.node
-        });
+          node: nodeArcs.node,
+          labels: arcToAdd.labels ? arcToAdd.labels : undefined
+        }));
         return true;
       default:
         return false;
@@ -199,23 +211,23 @@ export class DanDirectedGraph<I, D> {
   /**
    * toString
    */
-  public toString(showArcWeight: boolean = false): string {
+  public toString(showArcDetails: boolean = false): string {
     let outStr = '';
     for (let [key, value] of this._graph) {
       let incoming = '';
       let outgoing = '';
-      for (let [inKey, inArc] of value.incoming) {
-        if (showArcWeight) {
-          incoming = incoming.concat(`(node{${inKey}}-weight{${inArc.weight}});`);
+      for (let inArc of value.incoming.values()) {
+        if (showArcDetails) {
+          incoming += `(${inArc.toString(true)});`;
         } else {
-          incoming = incoming.concat(`${inKey};`);
+          incoming += `(${inArc.toString(false)});`;
         }
       }
-      for (let [outKey, outArc] of value.outgoing) {
-        if (showArcWeight) {
-          outgoing = outgoing.concat(`(node{${outKey}}-weight{${outArc.weight}});`);
+      for (let outArc of value.outgoing.values()) {
+        if (showArcDetails) {
+          outgoing += `(${outArc.toString(true)});`;
         } else {
-          outgoing = outgoing.concat(`${outKey};`);
+          outgoing += `(${outArc.toString(false)});`;
         }
       }
       outStr = outStr.concat(`\n${key} - incoming:[${incoming}]; outgoing:[${outgoing}]\n`);

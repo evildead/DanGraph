@@ -6,6 +6,8 @@ interface DanNodeAndUndirectedArcs<I, D> {
 export declare class DanUndirectedGraph<I, D> {
     protected _graph: Map<I, DanNodeAndUndirectedArcs<I, D>>;
     constructor();
+    static generateConsecutiveNodeGraph(numOfNodes: number): DanUndirectedGraph<number, undefined>;
+    static generateRandomNodeGraph(numOfNodes: number): DanUndirectedGraph<number, undefined>;
     addNode(node: DanNode<I, D>): boolean;
     addArcToNodeId(idNode: I, arcToAdd: DanArc<I, D>): boolean;
     addArcToNode(node: DanNode<I, D>, arcToAdd: DanArc<I, D>): boolean;
@@ -18,6 +20,6 @@ export declare class DanUndirectedGraph<I, D> {
     isAcyclic(): boolean;
     countNodes(): number;
     isEmpty(): boolean;
-    toString(showArcWeight?: boolean): string;
+    toString(showArcDetails?: boolean): string;
 }
 export {};

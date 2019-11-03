@@ -1,4 +1,5 @@
-import { DanNode, DanArc } from '../commons';
+import { DanNode, DanArc, CDanNode, CDanArc } from '../commons';
+import { randomIntFromInterval } from '../utils/commonUtils';
 
 interface DanNodeAndUndirectedArcs<I, D> {
   node: DanNode<I, D>;
@@ -10,6 +11,40 @@ export class DanUndirectedGraph<I, D> {
 
   public constructor() {
     this._graph = new Map();
+  }
+
+  public static generateConsecutiveNodeGraph(numOfNodes: number): DanUndirectedGraph<number, undefined> {
+    const outGraph = new DanUndirectedGraph<number, undefined>();
+    if (numOfNodes > 0) {
+      outGraph.addNode(new CDanNode({ id: 0 }));
+    }
+    for (let i = 1; i < numOfNodes; ++i) {
+      outGraph.addArcToNode(
+        new CDanNode({ id: i - 1 }),
+        new CDanArc({
+          weight: 1,
+          node: new CDanNode({ id: i })
+        })
+      );
+    }
+    return outGraph;
+  }
+
+  public static generateRandomNodeGraph(numOfNodes: number): DanUndirectedGraph<number, undefined> {
+    const outGraph = new DanUndirectedGraph<number, undefined>();
+    for (let i = 0; i < numOfNodes; ++i) {
+      outGraph.addNode(new CDanNode({ id: i }));
+      if (i > 0 && randomIntFromInterval(1, 2) > 1) {
+        outGraph.addArcToNode(
+          new CDanNode({ id: randomIntFromInterval(0, i - 1) }),
+          new CDanArc({
+            weight: 1,
+            node: new CDanNode({ id: i })
+          })
+        );
+      }
+    }
+    return outGraph;
   }
 
   /**
@@ -53,10 +88,11 @@ export class DanUndirectedGraph<I, D> {
     // add arcToAdd among the adjacent arcs of idNode
     nodeArcs.adjacents.set(arcToAdd.node.id, arcToAdd);
     // add node among the adjacent nodes of arcToAdd.node
-    nodeToAddArcs.adjacents.set(nodeArcs.node.id, {
+    nodeToAddArcs.adjacents.set(nodeArcs.node.id, new CDanArc({
       weight: arcToAdd.weight,
-      node: nodeArcs.node
-    });
+      node: nodeArcs.node,
+      labels: arcToAdd.labels ? arcToAdd.labels : undefined
+    }));
     return true;
   }
 
@@ -216,15 +252,15 @@ export class DanUndirectedGraph<I, D> {
   /**
    * toString
    */
-  public toString(showArcWeight: boolean = false): string {
+  public toString(showArcDetails: boolean = false): string {
     let outStr = '';
     for (let [key, value] of this._graph) {
       let adjacents = '';
-      for (let [adjKey, adjArc] of value.adjacents) {
-        if (showArcWeight) {
-          adjacents = adjacents.concat(`(node{${adjKey}}-weight{${adjArc.weight}});`);
+      for (let adjArc of value.adjacents.values()) {
+        if (showArcDetails) {
+          adjacents += `(${adjArc.toString(true)});`;
         } else {
-          adjacents = adjacents.concat(`${adjKey};`);
+          adjacents += `(${adjArc.toString(false)});`;
         }
       }
       outStr = outStr.concat(`\n${key} - adjacents:[${adjacents}]\n`);
