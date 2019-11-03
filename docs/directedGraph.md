@@ -6,7 +6,7 @@
 ## Examples
 ### The following graph is not acyclic and node 1 has a path to any other node in the graph:
 
-![Directed cyclic graph](docs/images/directed-graph_cyclic_node1-connected-to-all.png)
+![Directed cyclic graph](images/directed-graph_cyclic_node1-connected-to-all.png)
 
 ```ts
 import { DirectedGraph, CDanNode, CDanArc } from 'dangraph';
@@ -38,7 +38,7 @@ if (myGraph.sourceConnectedToAllNodes(1)) {
 
 ### The following graph is acyclic and node 1 does not have a path to node 7
 
-![Directed acyclic graph](docs/images/directed-graph_acyclic_node1-not-connected-to-all.png)
+![Directed acyclic graph](images/directed-graph_acyclic_node1-not-connected-to-all.png)
 
 ```ts
 import { DirectedGraph, CDanNode, CDanArc } from 'dangraph';
