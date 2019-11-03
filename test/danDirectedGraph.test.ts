@@ -6,7 +6,6 @@ import chai from 'chai';
 
 // commons module
 import { DirectedGraph, CDanNode, CDanArc } from '../src/index';
-import { ArcType } from '../src/directed_graph';
 
 const should = chai.should();
 const expect = chai.expect;
@@ -28,13 +27,13 @@ describe('Test the DanDirectedGraph', (): void => {
 
   it('addArcToNode', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
-    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
     myGraph.countNodes().should.equal(6);
     const graphStr = myGraph.toString();
     console.log(graphStr);
@@ -42,13 +41,13 @@ describe('Test the DanDirectedGraph', (): void => {
 
   it('removeNode', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
-    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
     myGraph.removeNode(6);
     myGraph.countNodes().should.equal(5);
     const graphStr = myGraph.toString();
@@ -57,13 +56,13 @@ describe('Test the DanDirectedGraph', (): void => {
 
   it('isAcyclic 1 (true)', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
-    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
     myGraph.isAcyclic().should.equal(true);
     const graphStr = myGraph.toString(true);
     console.log(graphStr);
@@ -71,13 +70,13 @@ describe('Test the DanDirectedGraph', (): void => {
 
   it('isAcyclic 2 (false)', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
-    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.incoming);
-    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
     myGraph.isAcyclic().should.equal(false);
     const graphStr = myGraph.toString();
     console.log(graphStr);
@@ -85,21 +84,62 @@ describe('Test the DanDirectedGraph', (): void => {
 
   it('isAcyclic 3 (false)', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
-    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 1 }) }), ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 1 }) }), DirectedGraph.ArcType.incoming);
     myGraph.isAcyclic().should.equal(false);
     const graphStr = myGraph.toString(true);
     console.log(graphStr);
   });
 
+  it('isAcyclic 4 (false)', (): void => {
+    const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.isAcyclic().should.equal(false);
+    const graphStr = myGraph.toString(true);
+    console.log(graphStr);
+  });
+
+  it('isAcyclic 5 (false)', (): void => {
+    const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 3 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.isAcyclic().should.equal(false);
+    const graphStr = myGraph.toString();
+    console.log(graphStr);
+  });
+
+  it('isAcyclic 6 (true)', (): void => {
+    const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 3 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.isAcyclic().should.equal(true);
+    const graphStr = myGraph.toString();
+    console.log(graphStr);
+  });
+
   it('sourceConnectedToAllNodes 1 (true)', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
-    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
     myGraph.sourceConnectedToAllNodes(1).should.equal(true);
     const graphStr = myGraph.toString();
     console.log(graphStr);
@@ -107,14 +147,14 @@ describe('Test the DanDirectedGraph', (): void => {
 
   it('sourceConnectedToAllNodes 2 (false)', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
-    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.incoming);
-    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.incoming);
     myGraph.sourceConnectedToAllNodes(1).should.equal(false);
     const graphStr = myGraph.toString();
     console.log(graphStr);
@@ -122,16 +162,32 @@ describe('Test the DanDirectedGraph', (): void => {
 
   it('sourceConnectedToAllNodes 3 (true)', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
-    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), ArcType.incoming);
-    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), ArcType.outgoing);
-    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), ArcType.incoming);
-    myGraph.addArcToNode(new CDanNode({ id: 3 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 3 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.outgoing);
     myGraph.sourceConnectedToAllNodes(1).should.equal(true);
+    const graphStr = myGraph.toString();
+    console.log(graphStr);
+  });
+
+  it('sourceConnectedToAllNodes 4 (false)', (): void => {
+    const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
+    myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 2 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }), DirectedGraph.ArcType.outgoing);
+    myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.addArcToNode(new CDanNode({ id: 3 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }), DirectedGraph.ArcType.incoming);
+    myGraph.sourceConnectedToAllNodes(1).should.equal(false);
     const graphStr = myGraph.toString();
     console.log(graphStr);
   });
