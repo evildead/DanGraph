@@ -20,7 +20,7 @@ export declare class DanDirectedGraph<I, D> {
     removeNode(idNode: I): boolean;
     isNodeALeaf(idNode: I): boolean;
     protected _getALeaf(): DanNode<I, D> | undefined;
-    toString(showArcWeight?: boolean): string;
+    toString(showArcDetails?: boolean): string;
     countNodes(): number;
     isEmpty(): boolean;
     protected _getOutgoingNodesList(idNode: I): DanNode<I, D>[];
