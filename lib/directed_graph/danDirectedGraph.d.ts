@@ -1,5 +1,5 @@
-import { DanNode, DanArc } from '../commons';
-interface DanNodeAndDirectedArcs<I, D> {
+import { DanNode, DanArc, GraphIterator } from '../commons';
+export interface DanNodeAndDirectedArcs<I, D> {
     node: DanNode<I, D>;
     incoming: Map<I, DanArc<I, D>>;
     outgoing: Map<I, DanArc<I, D>>;
@@ -14,6 +14,7 @@ export declare class DanDirectedGraph<I, D> {
     static generateConsecutiveNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined>;
     static generateRandomNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined>;
     protected _getCopyOfInnerGraph(): Map<I, DanNodeAndDirectedArcs<I, D>>;
+    getNodeAndDirectedArcsFromNodeId(idNode: I): DanNodeAndDirectedArcs<I, D> | undefined;
     addNode(node: DanNode<I, D>): boolean;
     addArcToNodeId(idNode: I, arcToAdd: DanArc<I, D>, arcType: ArcType): boolean;
     addArcToNode(node: DanNode<I, D>, arcToAdd: DanArc<I, D>, arcType: ArcType): boolean;
@@ -28,5 +29,5 @@ export declare class DanDirectedGraph<I, D> {
     isAcyclic(): boolean;
     protected _visitNodes(visitedNodes: Set<I>, nextNode: I): void;
     sourceConnectedToAllNodes(idNode: I): boolean;
+    getDepthFirstIterator(startingNodeId: I): GraphIterator<DanNode<I, D>>;
 }
-export {};

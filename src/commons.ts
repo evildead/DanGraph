@@ -1,3 +1,7 @@
+/**
+ * The DanNode interface represents a graph node.
+ * It contains a node identifier and may contain additional data.
+ */
 export interface DanNode<I, D> {
   id: I;
   data?: D;
@@ -6,6 +10,10 @@ export interface DanNode<I, D> {
   toString(showDetails: boolean): string;
 }
 
+/**
+ * The DanArc interface represents a graph arc.
+ * It contains a node structure, the arc weight and may contain an array of string labels.
+ */
 export interface DanArc<I, D> {
   weight: number;
   labels?: string[];
@@ -15,14 +23,31 @@ export interface DanArc<I, D> {
   toString(showDetails: boolean): string;
 }
 
+/**
+ * The GraphIterator interface
+ */
+export interface GraphIterator<T> {
+  // Return the current element.
+  current(): T | undefined;
+
+  // Return the current element and move forward to next element.
+  next(): T | undefined;
+
+  // Checks if graph contains more elements.
+  hasNext(): boolean;
+
+  // Rewind the Iterator to the first element.
+  rewind(): void;
+}
+
+/**
+ * The class implementing DanNode
+ */
 export class CDanNode<I, D> implements DanNode<I, D> {
   public id: I;
   public data?: D;
 
-  public constructor({id, data}: {
-    id: I;
-    data?: D;
-  }) {
+  public constructor({ id, data }: { id: I; data?: D }) {
     this.id = id;
     if (data !== undefined) {
       this.data = data;
@@ -47,16 +72,15 @@ export class CDanNode<I, D> implements DanNode<I, D> {
   }
 }
 
+/**
+ * The class implementing DanArc
+ */
 export class CDanArc<I, D> implements DanArc<I, D> {
   public weight: number;
   public labels?: string[];
   public node: DanNode<I, D>;
 
-  public constructor({weight, node, labels}: {
-    weight: number;
-    labels?: string[];
-    node: DanNode<I, D>;
-  }) {
+  public constructor({ weight, node, labels }: { weight: number; labels?: string[]; node: DanNode<I, D> }) {
     this.weight = weight;
     this.node = node;
     if (labels !== undefined) {

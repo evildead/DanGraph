@@ -113,7 +113,7 @@ describe('Test the DanUndirectedGraph', (): void => {
     const graphStr = myGraph.toString();
     console.log(graphStr);
   });
-  
+
   it('isAcyclic 3 (false)', (): void => {
     const myGraph = new UndirectedGraph.DanUndirectedGraph<number, undefined>();
     myGraph.addArcToNode(new CDanNode({ id: 1 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }));
