@@ -1,27 +1,49 @@
 // Lodash
 import _ from 'lodash';
 
-import { DanNode, DanArc, CDanNode, CDanArc } from '../commons';
+// common interfaces, classes, ...
+import { DanNode, DanArc, CDanNode, CDanArc, GraphIterator } from '../commons';
+
+// common utility functions
 import { randomIntFromInterval } from '../utils/commonUtils';
 
-interface DanNodeAndDirectedArcs<I, D> {
+// DanDirectedGraphDepthFirstIterator
+import { DanDirectedGraphDepthFirstIterator } from './danDirectedGraphDepthFirstIterator';
+
+/**
+ * The DanNodeAndDirectedArcs interface describes a node (DanNode<I, D>)
+ * and its incoming and outgoing arcs (Map<I, DanArc<I, D>>)
+ */
+export interface DanNodeAndDirectedArcs<I, D> {
   node: DanNode<I, D>;
   incoming: Map<I, DanArc<I, D>>;
   outgoing: Map<I, DanArc<I, D>>;
 }
 
+/**
+ * The directed arc type: incoming or outgoing
+ */
 export enum ArcType {
   incoming = 'incoming',
   outgoing = 'outgoing'
 }
 
+/**
+ * The class to handle directed graphs
+ */
 export class DanDirectedGraph<I, D> {
   protected _graph: Map<I, DanNodeAndDirectedArcs<I, D>>;
 
+  /**
+   * the public class constructor
+   */
   public constructor() {
     this._graph = new Map();
   }
 
+  /**
+   * A utility public static method to generate a graph with a number of 'numOfNodes' consecutive nodes
+   */
   public static generateConsecutiveNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined> {
     const outGraph = new DanDirectedGraph<number, undefined>();
     if (numOfNodes > 0) {
@@ -40,6 +62,9 @@ export class DanDirectedGraph<I, D> {
     return outGraph;
   }
 
+  /**
+   * A utility public static method to generate a graph with a number of 'numOfNodes' random nodes
+   */
   public static generateRandomNodeGraph(numOfNodes: number): DanDirectedGraph<number, undefined> {
     const outGraph = new DanDirectedGraph<number, undefined>();
     for (let i = 0; i < numOfNodes; ++i) {
@@ -59,7 +84,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * _getCopyOfInnerGraph
+   * Clone the inner graph structure
    * @returns a copy of the inner graph structure
    */
   protected _getCopyOfInnerGraph(): Map<I, DanNodeAndDirectedArcs<I, D>> {
@@ -67,7 +92,20 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * addNode
+   * Get node and directed arcs structure (as DanNodeAndDirectedArcs) from nodeId
+   * @param idNode the node identifier
+   * @returns node and directed arcs structure or undefined if nodeId is not present in the graph
+   */
+  public getNodeAndDirectedArcsFromNodeId(idNode: I): DanNodeAndDirectedArcs<I, D> | undefined {
+    // idNode is not present in the graph
+    if (!this._graph.has(idNode)) {
+      return undefined;
+    }
+    return this._graph.get(idNode) as DanNodeAndDirectedArcs<I, D>;
+  }
+
+  /**
+   * Add a node to the graph
    * @param node the node to add
    * @returns true if the node was correctly added to the graph; false if the node is already present
    */
@@ -84,7 +122,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * addArcToNodeId
+   * Add arc to node given a node id
    * @param idNode the id of the node receiving nodeToAdd
    * @param arcToAdd the arc being added
    * @param arcType arcToAdd will be added among the incoming or outgoing arcs of idNode, based on the value of arcType
@@ -111,11 +149,14 @@ export class DanDirectedGraph<I, D> {
         // add arcToAdd among the incoming arcs of idNode
         nodeArcs.incoming.set(arcToAdd.node.id, arcToAdd);
         // add node among the outgoing nodes of arcToAdd.node
-        nodeToAddArcs.outgoing.set(nodeArcs.node.id, new CDanArc({
-          weight: arcToAdd.weight,
-          node: nodeArcs.node,
-          labels: arcToAdd.labels ? arcToAdd.labels : undefined
-        }));
+        nodeToAddArcs.outgoing.set(
+          nodeArcs.node.id,
+          new CDanArc({
+            weight: arcToAdd.weight,
+            node: nodeArcs.node,
+            labels: arcToAdd.labels ? arcToAdd.labels : undefined
+          })
+        );
         return true;
       case ArcType.outgoing:
         // arcToAdd.node is already present
@@ -125,11 +166,14 @@ export class DanDirectedGraph<I, D> {
         // add arcToAdd among the outgoing nodes of idNode
         nodeArcs.outgoing.set(arcToAdd.node.id, arcToAdd);
         // add node among the incoming nodes of arcToAdd.node
-        nodeToAddArcs.incoming.set(nodeArcs.node.id, new CDanArc({
-          weight: arcToAdd.weight,
-          node: nodeArcs.node,
-          labels: arcToAdd.labels ? arcToAdd.labels : undefined
-        }));
+        nodeToAddArcs.incoming.set(
+          nodeArcs.node.id,
+          new CDanArc({
+            weight: arcToAdd.weight,
+            node: nodeArcs.node,
+            labels: arcToAdd.labels ? arcToAdd.labels : undefined
+          })
+        );
         return true;
       default:
         return false;
@@ -137,7 +181,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * addArcToNode
+   * Add to node given a node structure
    * @param node the node receiving nodeToAdd
    * @param nodeToAdd the node being added
    * @param arcType nodeToAdd will be added among the incoming or outgoing arcs of node, based on the value of arcType
@@ -152,7 +196,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * removeNode
+   * Remove a node given in input from the graph
    * @param idNode the id of the node to remove
    * @returns true if the node is correctly removed
    */
@@ -177,7 +221,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * isNodeALeaf
+   * Check if node is a leaf
    * @param idNode the id of the node to check
    * @returns true if the node is a leaf (no outgoing arcs)
    */
@@ -195,7 +239,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * _getALeaf
+   * Get a leaf in the graph or return undefined.
    * @returns the first leaf found, or undefined if no leaf is found
    */
   protected _getALeaf(): DanNode<I, D> | undefined {
@@ -236,7 +280,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * countNodes
+   * Public method to retrieve the number of nodes in the graph
    * @returns the number of nodes in the graph
    */
   public countNodes(): number {
@@ -244,7 +288,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * isEmpty
+   * Check if the graph is empty
    * @returns true if the graph does not contain any node
    */
   public isEmpty(): boolean {
@@ -252,7 +296,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * _getOutgoingNodesList
+   * Get all the outgoing nodes from a node identifier
    * @param idNode the id of the node to check
    * @returns the list of outgoing nodes of idNode as array of DanNode<I, D>
    */
@@ -272,7 +316,9 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * _isAcyclic
+   * Protected method to check if the graph is acyclic.
+   * Remove leaves iteratively from the graph: stop if the graph gets empty (acyclic graph),
+   * or if there are no more leaves to remove (cyclic graph).
    * @returns true if the graph does not contain cycles
    */
   protected _isAcyclic(): boolean {
@@ -290,7 +336,10 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * isAcyclic
+   * protected method to check if the graph is acyclic.
+   * First we keep a copy of the current inner graph.
+   * Then we invoke the 'protected _isAcyclic' method to check if the graph is acyclic.
+   * Then we restore the inner state (memento pattern).
    * @returns true if the graph does not contain cycles
    */
   public isAcyclic(): boolean {
@@ -304,7 +353,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * _visitNodes
+   * Protected method to visit all the neighbours of a node, given in input the node id and a previous set of visitedNodes
    * @param visitedNodes nodes already visited
    * @param nextNode the next node to visit
    */
@@ -319,7 +368,7 @@ export class DanDirectedGraph<I, D> {
   }
 
   /**
-   * sourceConnectedToAllNodes
+   * Public method to check if all nodes are connected to the source node in input
    * @param idNode source node to be checked
    * @returns true if source can reach all of the nodes in the graph
    */
@@ -332,5 +381,13 @@ export class DanDirectedGraph<I, D> {
     const visitedNodes: Set<I> = new Set();
     this._visitNodes(visitedNodes, idNode);
     return visitedNodes.size === this.countNodes();
+  }
+
+  /**
+   * Get depth first iterator
+   * @param startingNodeId the starting node identifier for the iterator
+   */
+  public getDepthFirstIterator(startingNodeId: I): GraphIterator<DanNode<I, D>> {
+    return new DanDirectedGraphDepthFirstIterator<I, D>(this, startingNodeId);
   }
 }

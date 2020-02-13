@@ -21,5 +21,6 @@ export declare class DanUndirectedGraph<I, D> {
     countNodes(): number;
     isEmpty(): boolean;
     toString(showArcDetails?: boolean): string;
+    getInnerGraph(): Map<I, DanNodeAndUndirectedArcs<I, D>>;
 }
 export {};

@@ -1,18 +1,34 @@
+// common interfaces, classes, ...
 import { DanNode, DanArc, CDanNode, CDanArc } from '../commons';
+
+// common utility functions
 import { randomIntFromInterval } from '../utils/commonUtils';
 
+/**
+ * The DanNodeAndUndirectedArcs interface describes a node (DanNode<I, D>)
+ * and its arcs (Map<I, DanArc<I, D>>)
+ */
 interface DanNodeAndUndirectedArcs<I, D> {
   node: DanNode<I, D>;
   adjacents: Map<I, DanArc<I, D>>;
 }
 
+/**
+ * The class to handle undirected graphs
+ */
 export class DanUndirectedGraph<I, D> {
   protected _graph: Map<I, DanNodeAndUndirectedArcs<I, D>>;
 
+  /**
+   * the public class constructor
+   */
   public constructor() {
     this._graph = new Map();
   }
 
+  /**
+   * A utility public static method to generate a graph with a number of 'numOfNodes' consecutive nodes
+   */
   public static generateConsecutiveNodeGraph(numOfNodes: number): DanUndirectedGraph<number, undefined> {
     const outGraph = new DanUndirectedGraph<number, undefined>();
     if (numOfNodes > 0) {
@@ -30,6 +46,9 @@ export class DanUndirectedGraph<I, D> {
     return outGraph;
   }
 
+  /**
+   * A utility public static method to generate a graph with a number of 'numOfNodes' random nodes
+   */
   public static generateRandomNodeGraph(numOfNodes: number): DanUndirectedGraph<number, undefined> {
     const outGraph = new DanUndirectedGraph<number, undefined>();
     for (let i = 0; i < numOfNodes; ++i) {
@@ -48,7 +67,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * addNode
+   * Add a node to the graph
    * @param node the node to add
    * @returns true if the node was correctly added to the graph; false if the node is already present
    */
@@ -64,7 +83,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * addArcToNodeId
+   * Add an arc to a node
    * @param idNode the id of the node receiving nodeToAdd
    * @param arcToAdd the arc being added
    * @returns true if arcToAdd was correctly added to the adjacent arcs of idNode; false if the idNode does not exist or if arcToAdd was already present
@@ -88,16 +107,19 @@ export class DanUndirectedGraph<I, D> {
     // add arcToAdd among the adjacent arcs of idNode
     nodeArcs.adjacents.set(arcToAdd.node.id, arcToAdd);
     // add node among the adjacent nodes of arcToAdd.node
-    nodeToAddArcs.adjacents.set(nodeArcs.node.id, new CDanArc({
-      weight: arcToAdd.weight,
-      node: nodeArcs.node,
-      labels: arcToAdd.labels ? arcToAdd.labels : undefined
-    }));
+    nodeToAddArcs.adjacents.set(
+      nodeArcs.node.id,
+      new CDanArc({
+        weight: arcToAdd.weight,
+        node: nodeArcs.node,
+        labels: arcToAdd.labels ? arcToAdd.labels : undefined
+      })
+    );
     return true;
   }
 
   /**
-   * addArcToNode
+   * Add arc to node
    * @param node the node receiving nodeToAdd
    * @param nodeToAdd the node being added
    * @returns true if nodeToAdd was correctly added to the adjacent arcs of node; false if nodeToAdd was already present
@@ -111,7 +133,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * removeNode
+   * Remove the node given in input from the graph
    * @param idNode the id of the node to remove
    * @returns true if the node is correctly removed
    */
@@ -131,7 +153,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * _getAdjacentNodesList
+   * Get the list of adjacent nodes of a given node identifier
    * @param idNode the id of the node to check
    * @returns the list of adjacent nodes of idNode as array of DanNode<I, D>
    */
@@ -150,16 +172,21 @@ export class DanUndirectedGraph<I, D> {
     return outgoingNodes;
   }
 
+  /**
+   * Get a node in the graph
+   * @returns a node in the graph or undefined if the graph is empty
+   */
   protected _getANode(): DanNode<I, D> | undefined {
     let outNode: DanNode<I, D> | undefined = undefined;
     for (let value of this._graph.values()) {
       outNode = value.node;
+      break;
     }
     return outNode;
   }
 
   /**
-   * _visitNodes
+   * Protected method to visit all the neighbours of a node, given in input the node id and a previous set of visitedNodes
    * @param visitedNodes nodes already visited
    * @param nextNode the next node to visit
    */
@@ -174,8 +201,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * _checkForCycle
-   * recursively checks for the presence of a cycle starting from node id nextNode
+   * Recursively checks for the presence of a cycle starting from node id nextNode
    * @param visitedNodes nodes already visited
    * @param nextNode the next node to visit
    * @param fromNode the parent node
@@ -201,7 +227,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * isConnected
+   * Check if the graph is connected
    * @returns true if the graph is connected
    */
   public isConnected(): boolean {
@@ -214,7 +240,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * isAcyclic
+   * Public method to check if the graph is acyclic
    * @returns true if the graph does not contain cycles
    */
   public isAcyclic(): boolean {
@@ -234,7 +260,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * countNodes
+   * Public method to retrieve the number of nodes in the graph
    * @returns the number of nodes in the graph
    */
   public countNodes(): number {
@@ -242,7 +268,7 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * isEmpty
+   * Check if the graph is empty
    * @returns true if the graph does not contain any node
    */
   public isEmpty(): boolean {
@@ -266,5 +292,13 @@ export class DanUndirectedGraph<I, D> {
       outStr = outStr.concat(`\n${key} - adjacents:[${adjacents}]\n`);
     }
     return outStr;
+  }
+
+  /**
+   * Get the inner graph object
+   * @returns the inner graph Map object
+   */
+  public getInnerGraph(): Map<I, DanNodeAndUndirectedArcs<I, D>> {
+    return this._graph;
   }
 }

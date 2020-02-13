@@ -11,6 +11,12 @@ export interface DanArc<I, D> {
     renderLabels(separator: string): string;
     toString(showDetails: boolean): string;
 }
+export interface GraphIterator<T> {
+    current(): T | undefined;
+    next(): T | undefined;
+    hasNext(): boolean;
+    rewind(): void;
+}
 export declare class CDanNode<I, D> implements DanNode<I, D> {
     id: I;
     data?: D;
