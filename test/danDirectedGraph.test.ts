@@ -542,7 +542,7 @@ describe('Test the DanDirectedGraph', (): void => {
     console.log(`${isAcyclic ? 'the graph is acyclic' : 'the graph is not acyclic'}`);
   });
 
-  it('DepthFirst iterator', (): void => {
+  it('Depth-First iterator: first example', (): void => {
     const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
     // 1 -> 2
     myGraph.addArcToNode(
@@ -628,5 +628,311 @@ describe('Test the DanDirectedGraph', (): void => {
         console.log(`Depth first iterator - Node ${node !== undefined ? node.id : 'undefined'}`);
       }
     }
+  });
+
+  it('Depth-First iterator: second example', (): void => {
+    const myGraph = new DirectedGraph.DanDirectedGraph<string, undefined>();
+    // 'A' -> 'B'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'A' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'B' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'A' -> 'C'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'A' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'C' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'B' -> 'D'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'B' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'D' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'B' -> 'E'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'B' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'E' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'C' -> 'F'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'C' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'F' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'C' -> 'G'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'C' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'G' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'E' -> 'H'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'E' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'H' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'E' -> 'I'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'E' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'I' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'G' -> 'J'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'G' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'J' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'G' -> 'K'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'G' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'K' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'H' -> 'L'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'H' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'L' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'H' -> 'M'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'H' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'M' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'H' -> 'N'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'H' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'N' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'I' -> 'O'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'I' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'O' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'I' -> 'P'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'I' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'P' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'K' -> 'Q'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'K' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'Q' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    myGraph.countNodes().should.equal(17);
+
+    const it = myGraph.getDepthFirstIterator('A');
+    let finalString = '';
+    while (it.hasNext()) {
+      const node = it.next();
+      expect(node).not.to.be.undefined;
+      if (node !== undefined) {
+        finalString += node.id;
+      }
+    }
+    finalString.should.equal('ABDEHLMNIOPCFGJKQ');
+  });
+
+  it('Breadth-First iterator: first example', (): void => {
+    const myGraph = new DirectedGraph.DanDirectedGraph<number, undefined>();
+    // 1 -> 2
+    myGraph.addArcToNode(
+      new CDanNode({ id: 1 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 2 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 1 -> 3
+    myGraph.addArcToNode(
+      new CDanNode({ id: 1 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 1 -> 4
+    myGraph.addArcToNode(
+      new CDanNode({ id: 1 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 4 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 2 -> 5
+    myGraph.addArcToNode(
+      new CDanNode({ id: 2 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 5 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 2 -> 6
+    myGraph.addArcToNode(
+      new CDanNode({ id: 2 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 4 -> 7
+    myGraph.addArcToNode(
+      new CDanNode({ id: 4 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 7 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 4 -> 8
+    myGraph.addArcToNode(
+      new CDanNode({ id: 4 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 8 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 5 -> 9
+    myGraph.addArcToNode(
+      new CDanNode({ id: 5 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 9 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 5 -> 10
+    myGraph.addArcToNode(
+      new CDanNode({ id: 5 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 10 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 7 -> 11
+    myGraph.addArcToNode(
+      new CDanNode({ id: 7 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 11 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 7 -> 12
+    myGraph.addArcToNode(
+      new CDanNode({ id: 7 }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 12 }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    myGraph.countNodes().should.equal(12);
+
+    const it = myGraph.getBreadthFirstIterator(1);
+    let counter = 1;
+    while (it.hasNext()) {
+      const node = it.next();
+      expect(node).not.to.be.undefined;
+      if (node !== undefined) {
+        node.id.should.equal(counter++);
+        console.log(`Breadth-first iterator - Node ${node !== undefined ? node.id : 'undefined'}`);
+      }
+    }
+  });
+
+  it('Breadth-First iterator: second example', (): void => {
+    const myGraph = new DirectedGraph.DanDirectedGraph<string, undefined>();
+    // 'A' -> 'B'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'A' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'B' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'A' -> 'C'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'A' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'C' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'B' -> 'D'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'B' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'D' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'B' -> 'E'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'B' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'E' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'C' -> 'F'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'C' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'F' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'C' -> 'G'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'C' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'G' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'E' -> 'H'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'E' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'H' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'E' -> 'I'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'E' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'I' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'G' -> 'J'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'G' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'J' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'G' -> 'K'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'G' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'K' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'H' -> 'L'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'H' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'L' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'H' -> 'M'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'H' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'M' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'H' -> 'N'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'H' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'N' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'I' -> 'O'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'I' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'O' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'I' -> 'P'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'I' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'P' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    // 'K' -> 'Q'
+    myGraph.addArcToNode(
+      new CDanNode({ id: 'K' }),
+      new CDanArc({ weight: 1, node: new CDanNode({ id: 'Q' }) }),
+      DirectedGraph.ArcType.outgoing
+    );
+    myGraph.countNodes().should.equal(17);
+
+    const it = myGraph.getBreadthFirstIterator('A');
+    let finalString = '';
+    while (it.hasNext()) {
+      const node = it.next();
+      expect(node).not.to.be.undefined;
+      if (node !== undefined) {
+        finalString += node.id;
+      }
+    }
+    finalString.should.equal('ABCDEFGHIJKLMNOPQ');
   });
 });

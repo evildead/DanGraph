@@ -2,15 +2,12 @@
 import { DanDirectedGraph, DanNodeAndDirectedArcs } from './danDirectedGraph';
 
 // common interfaces, classes, ...
-import { GraphIterator, DanNode, DanArc } from '../commons';
-
-// DanStack
-import { DanStack } from '../utils/danStack';
+import { GraphIterator, DanNode } from '../commons';
 
 /**
- * The class DanDirectedGraphDepthFirstIterator implements GraphIterator interface
+ * The class DanDirectedGraphBreadthFirstIterator implements GraphIterator interface
  */
-export class DanDirectedGraphDepthFirstIterator<I, D> implements GraphIterator<DanNode<I, D>> {
+export class DanDirectedGraphBreadthFirstIterator<I, D> implements GraphIterator<DanNode<I, D>> {
   // the graph
   private _graph: DanDirectedGraph<I, D>;
   // list of visited items
@@ -21,8 +18,14 @@ export class DanDirectedGraphDepthFirstIterator<I, D> implements GraphIterator<D
   private _currentNodeId: I | null;
   // the nextNode identifier
   private _nextNodeId: I | null;
-  // the stack
-  private _stack: DanStack<IterableIterator<[I, DanArc<I, D>]>>;
+  // the current level queue
+  private _currLevelQueue: DanNode<I, D>[];
+  // the current level queue position
+  private _currLevelQueuePosition: number;
+  // the next level queue
+  private _nextLevelQueue: DanNode<I, D>[];
+  // the next level set of elements
+  private _nextLevelSet: Set<I>;
 
   /**
    * The public class constructor
@@ -32,8 +35,10 @@ export class DanDirectedGraphDepthFirstIterator<I, D> implements GraphIterator<D
    */
   public constructor(collection: DanDirectedGraph<I, D>, startingNodeId: I) {
     this._graph = collection;
-    this._stack = new DanStack<IterableIterator<[I, DanArc<I, D>]>>();
     this._visitedNodes = new Set<I>();
+    this._currLevelQueue = [];
+    this._nextLevelQueue = [];
+    this._nextLevelSet = new Set<I>();
     this._initFields(startingNodeId);
   }
 
@@ -60,14 +65,12 @@ export class DanDirectedGraphDepthFirstIterator<I, D> implements GraphIterator<D
     // check if startingNodeId is in the graph: if startingNodeId is not found
     // in the graph, this method will throw an exception
     const startingNodeStructure = this._getNodeAndDirectedArcsFromNodeId(startingNodeId);
-
-    // add first node neighbors to the stack
-    this._stack.push(startingNodeStructure.outgoing.entries());
-
-    // assign fields
+    this._currLevelQueue.push(startingNodeStructure.node);
     this._startingNodeId = startingNodeId;
+    this._currLevelQueuePosition = 0;
     this._currentNodeId = null;
     this._nextNodeId = startingNodeId;
+    this._addNextNodeOutgoingsToNextLevelQueueIfNotAlreadyVisitedOrQueued();
   }
 
   /**
@@ -106,51 +109,61 @@ export class DanDirectedGraphDepthFirstIterator<I, D> implements GraphIterator<D
   }
 
   /**
-   * Advance to the next node in a depth first fashion
+   * Add the outgoing nodes of this._nextNodeId to the next-level-queue, if the node was not already visited, and if it's not already present inside the queue
+   * @returns {boolean} true if this._nextNodeId is not null, otherwise false
+   * @throws {Error} exception if this._nextNodeId was not found in graph
+   */
+  private _addNextNodeOutgoingsToNextLevelQueueIfNotAlreadyVisitedOrQueued(): boolean {
+    if (this._nextNodeId === null) {
+      return false;
+    }
+    const nextNodeStructure = this._getNodeAndDirectedArcsFromNodeId(this._nextNodeId);
+    // loop through all the outgoing nodes of next-node
+    for (const [nodeId, arc] of nextNodeStructure.outgoing) {
+      // add the node inside the next-level-queue, only if:
+      // - it was not already visited (!this._visitedNodes.has(nodeId)) AND
+      // - it's not already present inside the queue (!this._nextLevelSet.has(nodeId))
+      if (!this._visitedNodes.has(nodeId) && !this._nextLevelSet.has(nodeId)) {
+        this._nextLevelQueue.push(this._getNodeAndDirectedArcsFromNodeId(nodeId).node);
+        this._nextLevelSet.add(nodeId);
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Advance to the next node in a breadth first fashion
    */
   private _advance(): void {
-    // if the stack is empty set nextNode to null and return
-    if (this._stack.isEmpty()) {
+    // if there are elements left to visit inside the current-level queue, move forward the current-level queue iterator (this._currLevelQueuePosition)
+    if (this._currLevelQueuePosition + 1 < this._currLevelQueue.length) {
+      // assing the next node identifier
+      this._nextNodeId = this._currLevelQueue[++this._currLevelQueuePosition].id;
+      // add outgoing nodes to next-level queue
+      this._addNextNodeOutgoingsToNextLevelQueueIfNotAlreadyVisitedOrQueued();
+      return;
+    }
+
+    // no more elements left to visit inside the current-level queue, and the next-level queue is empty
+    if (this._nextLevelQueue.length < 1) {
+      // assing the next node identifier to null
       this._nextNodeId = null;
       return;
     }
 
-    // Repeat the procedure to compute the nextNode, until the nextNode itself is among the visited ones
-    do {
-      // get the neighbors iterator on top of the stack
-      let neighbors = this._stack.peek();
-      if (neighbors === undefined) {
-        this._nextNodeId = null;
-        return;
-      }
-      // advance the iterator
-      let result = neighbors.next();
-      // No more nodes -> back out a level
-      // N.B.: when result.done === true, the itarator reached the end
-      while (result.done) {
-        // pop the neighbors iterator out of the stack
-        this._stack.pop();
-        // The stack is empty: All done! Set the nextNode to null and return
-        if (this._stack.isEmpty()) {
-          this._nextNodeId = null;
-          return;
-        }
-        // get the neighbors iterator on top of the stack and advance the iterator
-        neighbors = this._stack.peek();
-        if (neighbors === undefined) {
-          this._nextNodeId = null;
-          return;
-        }
-        result = neighbors.next();
-      }
-      // get the nodeId value out of the neighbors iterator and assing it to the nextNode
-      const [nodeId, arc] = result.value;
-      this._nextNodeId = nodeId;
-    } while (this._visitedNodes.has(this._nextNodeId as I));
+    // clear current-level queue
+    this._currLevelQueue.splice(0, this._currLevelQueue.length);
+    this._currLevelQueuePosition = 0;
+    // copy next-level queue element to current-level queue
+    this._currLevelQueue = [...this._nextLevelQueue];
+    // clear next-level queue
+    this._nextLevelQueue.splice(0, this._nextLevelQueue.length);
+    this._nextLevelSet.clear();
 
-    // get next node structure and neighbors, and push the neighbors iterator on top of the stack
-    const nextNodeStructure = this._getNodeAndDirectedArcsFromNodeId(this._nextNodeId as I);
-    this._stack.push(nextNodeStructure.outgoing.entries());
+    // assing the next node identifier
+    this._nextNodeId = this._currLevelQueue[this._currLevelQueuePosition].id;
+    // add outgoing nodes to next-level queue
+    this._addNextNodeOutgoingsToNextLevelQueueIfNotAlreadyVisitedOrQueued();
   }
 
   /**
@@ -166,7 +179,9 @@ export class DanDirectedGraphDepthFirstIterator<I, D> implements GraphIterator<D
    */
   public rewind(): void {
     this._visitedNodes.clear();
-    this._stack.clear();
+    this._currLevelQueue.splice(0, this._currLevelQueue.length);
+    this._nextLevelQueue.splice(0, this._nextLevelQueue.length);
+    this._nextLevelSet.clear();
     this._initFields(this._startingNodeId);
   }
 }

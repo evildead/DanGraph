@@ -30,4 +30,5 @@ export declare class DanDirectedGraph<I, D> {
     protected _visitNodes(visitedNodes: Set<I>, nextNode: I): void;
     sourceConnectedToAllNodes(idNode: I): boolean;
     getDepthFirstIterator(startingNodeId: I): GraphIterator<DanNode<I, D>>;
+    getBreadthFirstIterator(startingNodeId: I): GraphIterator<DanNode<I, D>>;
 }
