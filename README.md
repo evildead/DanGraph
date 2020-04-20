@@ -17,7 +17,26 @@ myGraph.addArcToNode(
 
 ## Documentation
 
+[Code documentation](docs/code-documentation.md)
+
 Read more about
 
   * [Directed Graphs](docs/directedGraph.md)
+    - [Depth-First Iterator](docs/directedGraph.md#Depth-First-and-Breadth-First-iterators)
+    - [Breadth-First Iterator](docs/directedGraph.md#Depth-First-and-Breadth-First-iterators)
   * [Undirected Graphs](docs/undirectedGraph.md)
+
+## Scripts
+### Build
+`npm run build`
+### Test
+`npm run test`
+### Build documentation
+`npm run build:doc`
+
+## jsdoc-to-markdown
+* [Repository](https://github.com/jsdoc2md/jsdoc-to-markdown)
+
+* [How to document TypeScript](https://github.com/jsdoc2md/jsdoc-to-markdown/wiki/How-to-document-TypeScript)
+
+* Globally install jsdoc2md with `npm install -g jsdoc-to-markdown`
