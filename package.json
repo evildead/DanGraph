@@ -1,6 +1,6 @@
 {
   "name": "dangraph",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Utilities for directed and undirected graphs",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
