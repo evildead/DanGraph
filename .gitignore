@@ -81,5 +81,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-# Typescript build folder
-lib
+# Typescript
+/build/

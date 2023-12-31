@@ -5,18 +5,17 @@
     "target": "es2017",
     "module": "CommonJS",
     "noImplicitAny": false,
+    "allowJs": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
     "declaration": true,
-    "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "outDir": "./lib"
+    "outDir": "./build"
   },
-  "include": [
-    "./src/**/*.ts"
-  ]
+  "include": ["./src/**/*.ts", "./src/**/*.js"],
+  "exclude": ["**/*.spec.ts"]
 }
