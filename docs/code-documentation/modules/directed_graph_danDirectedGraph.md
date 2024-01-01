@@ -1,6 +1,6 @@
-[dangraph](../README.md) / [Exports](../modules.md) / directed\_graph/danDirectedGraph
+[dangraph](../README.md) / [Exports](../modules.md) / directed_graph/danDirectedGraph
 
-# Module: directed\_graph/danDirectedGraph
+# Module: directed_graph/danDirectedGraph
 
 ## Table of contents
 

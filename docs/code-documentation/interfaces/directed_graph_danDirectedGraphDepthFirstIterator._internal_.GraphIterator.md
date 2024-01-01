@@ -1,16 +1,16 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [directed\_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md) / [\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md) / GraphIterator
+[dangraph](../README.md) / [Exports](../modules.md) / [directed_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md) / [\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md) / GraphIterator
 
 # Interface: GraphIterator\<T\>
 
-[directed\_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md).[\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md).GraphIterator
+[directed_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md).[\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md).GraphIterator
 
 The GraphIterator interface
 
 ## Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 ## Implemented by
 
@@ -40,7 +40,7 @@ The GraphIterator interface
 
 [src/commons.ts:31](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L31)
 
-___
+---
 
 ### hasNext
 
@@ -54,7 +54,7 @@ ___
 
 [src/commons.ts:37](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L37)
 
-___
+---
 
 ### next
 
@@ -68,7 +68,7 @@ ___
 
 [src/commons.ts:34](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L34)
 
-___
+---
 
 ### rewind
 

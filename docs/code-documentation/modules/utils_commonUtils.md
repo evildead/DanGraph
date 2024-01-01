@@ -18,8 +18,8 @@ Get a random integer number between min and max (included)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description    |
+| :---- | :------- | :------------- |
 | `min` | `number` | minimum number |
 | `max` | `number` | maximum number |
 

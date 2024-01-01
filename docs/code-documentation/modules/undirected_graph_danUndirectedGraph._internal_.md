@@ -1,4 +1,4 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [undirected\_graph/danUndirectedGraph](undirected_graph_danUndirectedGraph.md) / \<internal\>
+[dangraph](../README.md) / [Exports](../modules.md) / [undirected_graph/danUndirectedGraph](undirected_graph_danUndirectedGraph.md) / \<internal\>
 
 # Module: \<internal\>
 

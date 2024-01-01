@@ -1,8 +1,8 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [directed\_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md) / DanNodeAndDirectedArcs
+[dangraph](../README.md) / [Exports](../modules.md) / [directed_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md) / DanNodeAndDirectedArcs
 
 # Interface: DanNodeAndDirectedArcs\<I, D\>
 
-[directed\_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md).DanNodeAndDirectedArcs
+[directed_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md).DanNodeAndDirectedArcs
 
 The DanNodeAndDirectedArcs interface describes a node (DanNode<I, D>)
 and its incoming and outgoing arcs (Map<I, DanArc<I, D>>)
@@ -10,9 +10,9 @@ and its incoming and outgoing arcs (Map<I, DanArc<I, D>>)
 ## Type parameters
 
 | Name |
-| :------ |
-| `I` |
-| `D` |
+| :--- |
+| `I`  |
+| `D`  |
 
 ## Table of contents
 
@@ -32,7 +32,7 @@ and its incoming and outgoing arcs (Map<I, DanArc<I, D>>)
 
 [src/directed_graph/danDirectedGraph.ts:20](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L20)
 
-___
+---
 
 ### node
 
@@ -42,7 +42,7 @@ ___
 
 [src/directed_graph/danDirectedGraph.ts:19](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L19)
 
-___
+---
 
 ### outgoing
 

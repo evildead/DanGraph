@@ -1,8 +1,8 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [directed\_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md) / ArcType
+[dangraph](../README.md) / [Exports](../modules.md) / [directed_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md) / ArcType
 
 # Enumeration: ArcType
 
-[directed\_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md).ArcType
+[directed_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md).ArcType
 
 The directed arc type: incoming or outgoing
 
@@ -17,17 +17,17 @@ The directed arc type: incoming or outgoing
 
 ### incoming
 
-• **incoming** = ``"incoming"``
+• **incoming** = `"incoming"`
 
 #### Defined in
 
 [src/directed_graph/danDirectedGraph.ts:28](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L28)
 
-___
+---
 
 ### outgoing
 
-• **outgoing** = ``"outgoing"``
+• **outgoing** = `"outgoing"`
 
 #### Defined in
 

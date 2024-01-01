@@ -1,8 +1,8 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [undirected\_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md) / [\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md) / DanArc
+[dangraph](../README.md) / [Exports](../modules.md) / [undirected_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md) / [\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md) / DanArc
 
 # Interface: DanArc\<I, D\>
 
-[undirected\_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md).[\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md).DanArc
+[undirected_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md).[\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md).DanArc
 
 The DanArc interface represents a graph arc.
 It contains a node structure, the arc weight and may contain an array of string labels.
@@ -10,9 +10,9 @@ It contains a node structure, the arc weight and may contain an array of string 
 ## Type parameters
 
 | Name |
-| :------ |
-| `I` |
-| `D` |
+| :--- |
+| `I`  |
+| `D`  |
 
 ## Table of contents
 
@@ -37,7 +37,7 @@ It contains a node structure, the arc weight and may contain an array of string 
 
 [src/commons.ts:19](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L19)
 
-___
+---
 
 ### node
 
@@ -47,7 +47,7 @@ ___
 
 [src/commons.ts:20](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L20)
 
-___
+---
 
 ### weight
 
@@ -65,8 +65,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type     |
+| :---------- | :------- |
 | `separator` | `string` |
 
 #### Returns
@@ -77,7 +77,7 @@ ___
 
 [src/commons.ts:22](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L22)
 
-___
+---
 
 ### toString
 
@@ -85,8 +85,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name          | Type      |
+| :------------ | :-------- |
 | `showDetails` | `boolean` |
 
 #### Returns

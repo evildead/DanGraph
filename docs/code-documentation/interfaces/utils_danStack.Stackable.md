@@ -5,17 +5,17 @@
 [utils/danStack](../modules/utils_danStack.md).Stackable
 
 A Stackable interface is composed of:
-push    -> insert a value to the top of the stack
-pop     -> get the value from the top of the stack and remove it from the stack itself
-peek    -> get the value from the top of the stack but do not remove it from the stack itself
+push -> insert a value to the top of the stack
+pop -> get the value from the top of the stack and remove it from the stack itself
+peek -> get the value from the top of the stack but do not remove it from the stack itself
 isEmpty -> check if the stack is empty
-clear   -> clear all stack's elements
+clear -> clear all stack's elements
 
 ## Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 ## Implemented by
 
@@ -45,7 +45,7 @@ clear   -> clear all stack's elements
 
 [src/utils/danStack.ts:14](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L14)
 
-___
+---
 
 ### isEmpty
 
@@ -59,7 +59,7 @@ ___
 
 [src/utils/danStack.ts:13](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L13)
 
-___
+---
 
 ### peek
 
@@ -73,7 +73,7 @@ ___
 
 [src/utils/danStack.ts:12](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L12)
 
-___
+---
 
 ### pop
 
@@ -87,7 +87,7 @@ ___
 
 [src/utils/danStack.ts:11](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L11)
 
-___
+---
 
 ### push
 
@@ -95,9 +95,9 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `val` | `T` |
+| Name  | Type |
+| :---- | :--- |
+| `val` | `T`  |
 
 #### Returns
 

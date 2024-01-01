@@ -1,14 +1,14 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [directed\_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md) / [\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md) / IterableIterator
+[dangraph](../README.md) / [Exports](../modules.md) / [directed_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md) / [\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md) / IterableIterator
 
 # Interface: IterableIterator\<T\>
 
-[directed\_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md).[\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md).IterableIterator
+[directed_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md).[\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md).IterableIterator
 
 ## Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 ## Hierarchy
 
@@ -20,7 +20,7 @@
 
 ### Methods
 
-- [[iterator]](directed_graph_danDirectedGraphDepthFirstIterator._internal_.IterableIterator.md#[iterator])
+- [[iterator]](directed*graph_danDirectedGraphDepthFirstIterator.\_internal*.IterableIterator.md#[iterator])
 - [next](directed_graph_danDirectedGraphDepthFirstIterator._internal_.IterableIterator.md#next)
 - [return](directed_graph_danDirectedGraphDepthFirstIterator._internal_.IterableIterator.md#return)
 - [throw](directed_graph_danDirectedGraphDepthFirstIterator._internal_.IterableIterator.md#throw)
@@ -39,7 +39,7 @@
 
 node_modules/typescript/lib/lib.es2015.iterable.d.ts:53
 
-___
+---
 
 ### next
 
@@ -47,8 +47,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                |
+| :-------- | :------------------ |
 | `...args` | [] \| [`undefined`] |
 
 #### Returns
@@ -63,7 +63,7 @@ ___
 
 node_modules/typescript/lib/lib.es2015.iterable.d.ts:43
 
-___
+---
 
 ### return
 
@@ -71,8 +71,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type  |
+| :------- | :---- |
 | `value?` | `any` |
 
 #### Returns
@@ -87,7 +87,7 @@ ___
 
 node_modules/typescript/lib/lib.es2015.iterable.d.ts:44
 
-___
+---
 
 ### throw
 
@@ -95,8 +95,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type  |
+| :--- | :---- |
 | `e?` | `any` |
 
 #### Returns

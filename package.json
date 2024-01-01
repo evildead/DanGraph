@@ -12,6 +12,7 @@
     "rimraf": "./node_modules/rimraf/bin.js",
     "clean": "rimraf build/",
     "build": "npm run clean && tsc && npm i --package-lock-only",
+    "format": "prettier --write .",
     "prepublishOnly": "npm test",
     "build:doc": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-missing-exports --out ./docs/code-documentation ./src/*/*.ts",
     "lint": "eslint ./src --ext ts",

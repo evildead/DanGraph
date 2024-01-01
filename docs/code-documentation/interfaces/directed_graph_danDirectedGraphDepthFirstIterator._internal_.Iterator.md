@@ -1,16 +1,16 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [directed\_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md) / [\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md) / Iterator
+[dangraph](../README.md) / [Exports](../modules.md) / [directed_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md) / [\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md) / Iterator
 
 # Interface: Iterator\<T, TReturn, TNext\>
 
-[directed\_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md).[\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md).Iterator
+[directed_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md).[\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md).Iterator
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | `T` |
-| `TReturn` | `any` |
-| `TNext` | `undefined` |
+| Name      | Type        |
+| :-------- | :---------- |
+| `T`       | `T`         |
+| `TReturn` | `any`       |
+| `TNext`   | `undefined` |
 
 ## Hierarchy
 
@@ -34,8 +34,8 @@
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type            |
+| :-------- | :-------------- |
 | `...args` | [] \| [`TNext`] |
 
 #### Returns
@@ -46,7 +46,7 @@
 
 node_modules/typescript/lib/lib.es2015.iterable.d.ts:43
 
-___
+---
 
 ### return
 
@@ -54,8 +54,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type      |
+| :------- | :-------- |
 | `value?` | `TReturn` |
 
 #### Returns
@@ -66,7 +66,7 @@ ___
 
 node_modules/typescript/lib/lib.es2015.iterable.d.ts:44
 
-___
+---
 
 ### throw
 
@@ -74,8 +74,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type  |
+| :--- | :---- |
 | `e?` | `any` |
 
 #### Returns

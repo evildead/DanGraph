@@ -1,8 +1,8 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [undirected\_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md) / [\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md) / DanNode
+[dangraph](../README.md) / [Exports](../modules.md) / [undirected_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md) / [\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md) / DanNode
 
 # Interface: DanNode\<I, D\>
 
-[undirected\_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md).[\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md).DanNode
+[undirected_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md).[\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md).DanNode
 
 The DanNode interface represents a graph node.
 It contains a node identifier and may contain additional data.
@@ -10,9 +10,9 @@ It contains a node identifier and may contain additional data.
 ## Type parameters
 
 | Name |
-| :------ |
-| `I` |
-| `D` |
+| :--- |
+| `I`  |
+| `D`  |
 
 ## Table of contents
 
@@ -36,7 +36,7 @@ It contains a node identifier and may contain additional data.
 
 [src/commons.ts:7](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L7)
 
-___
+---
 
 ### id
 
@@ -60,7 +60,7 @@ ___
 
 [src/commons.ts:9](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L9)
 
-___
+---
 
 ### toString
 
@@ -68,8 +68,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name          | Type      |
+| :------------ | :-------- |
 | `showDetails` | `boolean` |
 
 #### Returns
