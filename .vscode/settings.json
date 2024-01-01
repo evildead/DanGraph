@@ -1,0 +1,8 @@
+{
+  "gitlens.codeLens.enabled": false,
+  "gitlens.blame.highlight.enabled": false,
+  "gitlens.currentLine.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2
+}
