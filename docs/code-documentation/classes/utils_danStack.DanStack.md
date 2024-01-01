@@ -9,8 +9,8 @@ DanStack is a simple class implementing Stackable interface
 ## Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 ## Implements
 
@@ -45,8 +45,8 @@ The public class constructor
 #### Type parameters
 
 | Name |
-| :--- |
-| `T`  |
+| :------ |
+| `T` |
 
 #### Returns
 
@@ -54,7 +54,7 @@ The public class constructor
 
 #### Defined in
 
-[src/utils/danStack.ts:26](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L26)
+[src/utils/danStack.ts:26](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L26)
 
 ## Properties
 
@@ -64,7 +64,7 @@ The public class constructor
 
 #### Defined in
 
-[src/utils/danStack.ts:21](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L21)
+[src/utils/danStack.ts:21](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L21)
 
 ## Methods
 
@@ -73,7 +73,7 @@ The public class constructor
 ▸ **clear**(): `void`
 
 Clear all stack's elements
-We use the 'splice' method of the private member '\_list'
+We use the 'splice' method of the private member '_list'
 
 #### Returns
 
@@ -85,16 +85,16 @@ We use the 'splice' method of the private member '\_list'
 
 #### Defined in
 
-[src/utils/danStack.ts:73](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L73)
+[src/utils/danStack.ts:73](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L73)
 
----
+___
 
 ### isEmpty
 
 ▸ **isEmpty**(): `boolean`
 
 Check if the stack is empty
-We use the 'length' method of the private member '\_list' to check the number of elements present:
+We use the 'length' method of the private member '_list' to check the number of elements present:
 if the number is less than 1, the stack is empty
 
 #### Returns
@@ -109,9 +109,9 @@ true if the stack is empty; it returns false is the stack is not empty
 
 #### Defined in
 
-[src/utils/danStack.ts:65](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L65)
+[src/utils/danStack.ts:65](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L65)
 
----
+___
 
 ### peek
 
@@ -131,16 +131,16 @@ the element on top of the stack if the stack is not empty; conversely it returns
 
 #### Defined in
 
-[src/utils/danStack.ts:52](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L52)
+[src/utils/danStack.ts:52](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L52)
 
----
+___
 
 ### pop
 
 ▸ **pop**(): `undefined` \| `T`
 
 Get the value from the top of the stack and remove it from the stack itself
-We use the 'pop' method of the private member '\_list'
+We use the 'pop' method of the private member '_list'
 
 #### Returns
 
@@ -154,22 +154,22 @@ the element on top of the stack if the stack is not empty; conversely it returns
 
 #### Defined in
 
-[src/utils/danStack.ts:44](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L44)
+[src/utils/danStack.ts:44](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L44)
 
----
+___
 
 ### push
 
 ▸ **push**(`val`): `void`
 
 Insert a value to the top of the stack
-We use the 'push' method of the private member '\_list'
+We use the 'push' method of the private member '_list'
 
 #### Parameters
 
-| Name  | Type | Description                             |
-| :---- | :--- | :-------------------------------------- |
-| `val` | `T`  | the value to be pushed inside the stack |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `val` | `T` | the value to be pushed inside the stack |
 
 #### Returns
 
@@ -181,4 +181,4 @@ We use the 'push' method of the private member '\_list'
 
 #### Defined in
 
-[src/utils/danStack.ts:35](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/danStack.ts#L35)
+[src/utils/danStack.ts:35](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L35)

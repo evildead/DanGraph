@@ -1,17 +1,17 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [directed_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md) / DanDirectedGraph
+[dangraph](../README.md) / [Exports](../modules.md) / [directed\_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md) / DanDirectedGraph
 
 # Class: DanDirectedGraph\<I, D\>
 
-[directed_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md).DanDirectedGraph
+[directed\_graph/danDirectedGraph](../modules/directed_graph_danDirectedGraph.md).DanDirectedGraph
 
 The class DanDirectedGraph handles directed graphs
 
 ## Type parameters
 
 | Name |
-| :--- |
-| `I`  |
-| `D`  |
+| :------ |
+| `I` |
+| `D` |
 
 ## Table of contents
 
@@ -57,9 +57,9 @@ the public class constructor
 #### Type parameters
 
 | Name |
-| :--- |
-| `I`  |
-| `D`  |
+| :------ |
+| `I` |
+| `D` |
 
 #### Returns
 
@@ -67,7 +67,7 @@ the public class constructor
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:41](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L41)
+[src/directed_graph/danDirectedGraph.ts:41](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L41)
 
 ## Properties
 
@@ -77,13 +77,13 @@ the public class constructor
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:36](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L36)
+[src/directed_graph/danDirectedGraph.ts:36](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L36)
 
 ## Methods
 
 ### \_getALeaf
 
-▸ **\_getALeaf**(): `undefined` \| [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\>
+▸ **_getALeaf**(): `undefined` \| [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\>
 
 Get a leaf in the graph or return undefined.
 
@@ -95,13 +95,13 @@ the first leaf found, or undefined if no leaf is found
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:250](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L250)
+[src/directed_graph/danDirectedGraph.ts:250](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L250)
 
----
+___
 
 ### \_getCopyOfInnerGraph
 
-▸ **\_getCopyOfInnerGraph**(): `Map`\<`I`, [`DanNodeAndDirectedArcs`](../interfaces/directed_graph_danDirectedGraph.DanNodeAndDirectedArcs.md)\<`I`, `D`\>\>
+▸ **_getCopyOfInnerGraph**(): `Map`\<`I`, [`DanNodeAndDirectedArcs`](../interfaces/directed_graph_danDirectedGraph.DanNodeAndDirectedArcs.md)\<`I`, `D`\>\>
 
 Clone the inner graph structure
 
@@ -113,21 +113,21 @@ a copy of the inner graph structure
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:95](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L95)
+[src/directed_graph/danDirectedGraph.ts:95](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L95)
 
----
+___
 
 ### \_getOutgoingNodesList
 
-▸ **\_getOutgoingNodesList**(`idNode`): [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\>[]
+▸ **_getOutgoingNodesList**(`idNode`): [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\>[]
 
 Get all the outgoing nodes from a node identifier
 
 #### Parameters
 
-| Name     | Type | Description                 |
-| :------- | :--- | :-------------------------- |
-| `idNode` | `I`  | the id of the node to check |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the id of the node to check |
 
 #### Returns
 
@@ -137,13 +137,13 @@ the list of outgoing nodes of idNode as array of DanNode<I, D>
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:310](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L310)
+[src/directed_graph/danDirectedGraph.ts:310](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L310)
 
----
+___
 
 ### \_isAcyclic
 
-▸ **\_isAcyclic**(): `boolean`
+▸ **_isAcyclic**(): `boolean`
 
 Protected method to check if the graph is acyclic.
 Remove leaves iteratively from the graph: stop if the graph gets empty (acyclic graph),
@@ -157,22 +157,22 @@ true if the graph does not contain cycles, otherwise false
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:331](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L331)
+[src/directed_graph/danDirectedGraph.ts:331](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L331)
 
----
+___
 
 ### \_visitNodes
 
-▸ **\_visitNodes**(`visitedNodes`, `nextNode`): `void`
+▸ **_visitNodes**(`visitedNodes`, `nextNode`): `void`
 
 Protected method to visit all the neighbours of a node, given in input the node id and a previous set of visitedNodes
 
 #### Parameters
 
-| Name           | Type         | Description               |
-| :------------- | :----------- | :------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `visitedNodes` | `Set`\<`I`\> | the nodes already visited |
-| `nextNode`     | `I`          | the next node to visit    |
+| `nextNode` | `I` | the next node to visit |
 
 #### Returns
 
@@ -180,9 +180,9 @@ Protected method to visit all the neighbours of a node, given in input the node 
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:367](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L367)
+[src/directed_graph/danDirectedGraph.ts:367](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L367)
 
----
+___
 
 ### addArcToNode
 
@@ -192,11 +192,11 @@ Add arc to node given a node structure
 
 #### Parameters
 
-| Name       | Type                                                                                             | Description                                                                                         |
-| :--------- | :----------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| `node`     | [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\> | the node receiving _arcToAdd_                                                                       |
-| `arcToAdd` | [`DanArc`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanArc.md)\<`I`, `D`\>   | the arc being added                                                                                 |
-| `arcType`  | [`ArcType`](../enums/directed_graph_danDirectedGraph.ArcType.md)                                 | _arcToAdd_ will be added among the incoming or outgoing arcs of node, based on the value of arcType |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `node` | [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\> | the node receiving _arcToAdd_ |
+| `arcToAdd` | [`DanArc`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanArc.md)\<`I`, `D`\> | the arc being added |
+| `arcType` | [`ArcType`](../enums/directed_graph_danDirectedGraph.ArcType.md) | _arcToAdd_ will be added among the incoming or outgoing arcs of node, based on the value of arcType |
 
 #### Returns
 
@@ -206,9 +206,9 @@ true if _arcToAdd_ was correctly added to the icoming/ougoing arcs of node; fals
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:195](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L195)
+[src/directed_graph/danDirectedGraph.ts:195](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L195)
 
----
+___
 
 ### addArcToNodeId
 
@@ -218,11 +218,11 @@ Add arc to node given a node id
 
 #### Parameters
 
-| Name       | Type                                                                                           | Description                                                                                           |
-| :--------- | :--------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------- |
-| `idNode`   | `I`                                                                                            | the id of the node receiving _arcToAdd_                                                               |
-| `arcToAdd` | [`DanArc`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanArc.md)\<`I`, `D`\> | the arc being added                                                                                   |
-| `arcType`  | [`ArcType`](../enums/directed_graph_danDirectedGraph.ArcType.md)                               | _arcToAdd_ will be added among the incoming or outgoing arcs of idNode, based on the value of arcType |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the id of the node receiving _arcToAdd_ |
+| `arcToAdd` | [`DanArc`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanArc.md)\<`I`, `D`\> | the arc being added |
+| `arcType` | [`ArcType`](../enums/directed_graph_danDirectedGraph.ArcType.md) | _arcToAdd_ will be added among the incoming or outgoing arcs of idNode, based on the value of arcType |
 
 #### Returns
 
@@ -232,9 +232,9 @@ true if _arcToAdd_ was correctly added to the icoming/ougoing arcs of idNode; fa
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:136](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L136)
+[src/directed_graph/danDirectedGraph.ts:136](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L136)
 
----
+___
 
 ### addNode
 
@@ -244,8 +244,8 @@ Add a node to the graph
 
 #### Parameters
 
-| Name   | Type                                                                                             | Description     |
-| :----- | :----------------------------------------------------------------------------------------------- | :-------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `node` | [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\> | the node to add |
 
 #### Returns
@@ -256,9 +256,9 @@ true if the node was correctly added to the graph; false if the node is already 
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:117](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L117)
+[src/directed_graph/danDirectedGraph.ts:117](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L117)
 
----
+___
 
 ### countNodes
 
@@ -274,9 +274,9 @@ the number of nodes in the graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:293](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L293)
+[src/directed_graph/danDirectedGraph.ts:293](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L293)
 
----
+___
 
 ### getBreadthFirstIterator
 
@@ -286,9 +286,9 @@ Get breadth-first iterator
 
 #### Parameters
 
-| Name             | Type | Description                                   |
-| :--------------- | :--- | :-------------------------------------------- |
-| `startingNodeId` | `I`  | the starting node identifier for the iterator |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `startingNodeId` | `I` | the starting node identifier for the iterator |
 
 #### Returns
 
@@ -298,9 +298,9 @@ the breadth-first iterator
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:407](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L407)
+[src/directed_graph/danDirectedGraph.ts:407](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L407)
 
----
+___
 
 ### getDepthFirstIterator
 
@@ -310,9 +310,9 @@ Get depth-first iterator
 
 #### Parameters
 
-| Name             | Type | Description                                   |
-| :--------------- | :--- | :-------------------------------------------- |
-| `startingNodeId` | `I`  | the starting node identifier for the iterator |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `startingNodeId` | `I` | the starting node identifier for the iterator |
 
 #### Returns
 
@@ -322,9 +322,9 @@ the depth-first iterator
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:398](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L398)
+[src/directed_graph/danDirectedGraph.ts:398](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L398)
 
----
+___
 
 ### getNodeAndDirectedArcsFromNodeId
 
@@ -334,9 +334,9 @@ Get node and directed arcs structure (as DanNodeAndDirectedArcs) from nodeId
 
 #### Parameters
 
-| Name     | Type | Description         |
-| :------- | :--- | :------------------ |
-| `idNode` | `I`  | the node identifier |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the node identifier |
 
 #### Returns
 
@@ -346,9 +346,9 @@ node and directed arcs structure or undefined if nodeId is not present in the gr
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:104](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L104)
+[src/directed_graph/danDirectedGraph.ts:104](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L104)
 
----
+___
 
 ### isAcyclic
 
@@ -356,7 +356,7 @@ node and directed arcs structure or undefined if nodeId is not present in the gr
 
 Public method to check if the graph is acyclic.
 First we keep a copy of the current inner graph.
-Then we invoke the protected [this._isAcyclic](#DanDirectedGraph<I, D>+\_isAcyclic) method to check if the graph is acyclic.
+Then we invoke the protected [this._isAcyclic](#DanDirectedGraph<I, D>+_isAcyclic) method to check if the graph is acyclic.
 Then we restore the inner state (memento pattern).
 
 #### Returns
@@ -367,9 +367,9 @@ true if the graph does not contain cycles
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:352](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L352)
+[src/directed_graph/danDirectedGraph.ts:352](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L352)
 
----
+___
 
 ### isEmpty
 
@@ -385,9 +385,9 @@ true if the graph does not contain any node
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:301](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L301)
+[src/directed_graph/danDirectedGraph.ts:301](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L301)
 
----
+___
 
 ### isNodeALeaf
 
@@ -397,9 +397,9 @@ Check if node is a leaf
 
 #### Parameters
 
-| Name     | Type | Description                 |
-| :------- | :--- | :-------------------------- |
-| `idNode` | `I`  | the id of the node to check |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the id of the node to check |
 
 #### Returns
 
@@ -409,9 +409,9 @@ true if the node is a leaf (no outgoing arcs)
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:233](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L233)
+[src/directed_graph/danDirectedGraph.ts:233](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L233)
 
----
+___
 
 ### removeNode
 
@@ -421,9 +421,9 @@ Remove a node given in input from the graph
 
 #### Parameters
 
-| Name     | Type | Description                  |
-| :------- | :--- | :--------------------------- |
-| `idNode` | `I`  | the id of the node to remove |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the id of the node to remove |
 
 #### Returns
 
@@ -433,9 +433,9 @@ true if the node is correctly removed
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:208](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L208)
+[src/directed_graph/danDirectedGraph.ts:208](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L208)
 
----
+___
 
 ### sourceConnectedToAllNodes
 
@@ -445,9 +445,9 @@ Public method to check if all nodes are connected to the source node in input
 
 #### Parameters
 
-| Name     | Type | Description               |
-| :------- | :--- | :------------------------ |
-| `idNode` | `I`  | source node to be checked |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | source node to be checked |
 
 #### Returns
 
@@ -457,9 +457,9 @@ true if source can reach all of the nodes in the graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:382](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L382)
+[src/directed_graph/danDirectedGraph.ts:382](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L382)
 
----
+___
 
 ### toString
 
@@ -469,9 +469,9 @@ The string representation of the directed graph
 
 #### Parameters
 
-| Name             | Type      | Default value |
-| :--------------- | :-------- | :------------ |
-| `showArcDetails` | `boolean` | `false`       |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `showArcDetails` | `boolean` | `false` |
 
 #### Returns
 
@@ -481,9 +481,9 @@ the string representation of the directed graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:265](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L265)
+[src/directed_graph/danDirectedGraph.ts:265](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L265)
 
----
+___
 
 ### generateConsecutiveNodeGraph
 
@@ -493,8 +493,8 @@ A utility public static method to generate a directed graph with a number of _nu
 
 #### Parameters
 
-| Name         | Type     | Description                             |
-| :----------- | :------- | :-------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `numOfNodes` | `number` | the number of nodes of the output graph |
 
 #### Returns
@@ -505,9 +505,9 @@ a directed graph witn _numOfNodes_ nodes
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:50](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L50)
+[src/directed_graph/danDirectedGraph.ts:50](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L50)
 
----
+___
 
 ### generateRandomNodeGraph
 
@@ -517,8 +517,8 @@ A utility public static method to generate a directed graph with a number of _nu
 
 #### Parameters
 
-| Name         | Type     | Description                             |
-| :----------- | :------- | :-------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `numOfNodes` | `number` | the number of nodes of the output graph |
 
 #### Returns
@@ -529,4 +529,4 @@ a directed graph witn _numOfNodes_ nodes
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:73](https://github.com/evildead/DanGraph/blob/2bfd060/src/directed_graph/danDirectedGraph.ts#L73)
+[src/directed_graph/danDirectedGraph.ts:73](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L73)

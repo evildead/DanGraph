@@ -1,6 +1,6 @@
-[dangraph](../README.md) / [Exports](../modules.md) / directed_graph/danDirectedGraphBreadthFirstIterator
+[dangraph](../README.md) / [Exports](../modules.md) / directed\_graph/danDirectedGraphBreadthFirstIterator
 
-# Module: directed_graph/danDirectedGraphBreadthFirstIterator
+# Module: directed\_graph/danDirectedGraphBreadthFirstIterator
 
 ## Table of contents
 

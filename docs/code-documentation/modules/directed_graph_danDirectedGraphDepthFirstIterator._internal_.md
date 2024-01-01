@@ -1,4 +1,4 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [directed_graph/danDirectedGraphDepthFirstIterator](directed_graph_danDirectedGraphDepthFirstIterator.md) / \<internal\>
+[dangraph](../README.md) / [Exports](../modules.md) / [directed\_graph/danDirectedGraphDepthFirstIterator](directed_graph_danDirectedGraphDepthFirstIterator.md) / \<internal\>
 
 # Module: \<internal\>
 
@@ -24,9 +24,9 @@
 
 #### Type parameters
 
-| Name      | Type  |
-| :-------- | :---- |
-| `T`       | `T`   |
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` |
 | `TReturn` | `any` |
 
 #### Defined in

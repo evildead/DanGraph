@@ -1,6 +1,6 @@
-[dangraph](../README.md) / [Exports](../modules.md) / directed_graph
+[dangraph](../README.md) / [Exports](../modules.md) / directed\_graph
 
-# Module: directed_graph
+# Module: directed\_graph
 
 ## Table of contents
 
@@ -16,13 +16,13 @@
 
 Re-exports [ArcType](../enums/directed_graph_danDirectedGraph.ArcType.md)
 
----
+___
 
 ### DanDirectedGraph
 
 Re-exports [DanDirectedGraph](../classes/directed_graph_danDirectedGraph.DanDirectedGraph.md)
 
----
+___
 
 ### DanNodeAndDirectedArcs
 

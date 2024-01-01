@@ -22,7 +22,7 @@ myGraph.addArcToNode(
 
 ## Documentation
 
-[Code documentation](docs/code-documentation.md)
+[Code documentation](docs/code-documentation/modules.md)
 
 Read more about
 
@@ -44,11 +44,3 @@ Read more about
 ### Build documentation
 
 `npm run build:doc`
-
-## jsdoc-to-markdown
-
-- [Repository](https://github.com/jsdoc2md/jsdoc-to-markdown)
-
-- [How to document TypeScript](https://github.com/jsdoc2md/jsdoc-to-markdown/wiki/How-to-document-TypeScript)
-
-- Globally install jsdoc2md with `npm install -g jsdoc-to-markdown`

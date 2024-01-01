@@ -1,17 +1,17 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [undirected_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md) / DanUndirectedGraph
+[dangraph](../README.md) / [Exports](../modules.md) / [undirected\_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md) / DanUndirectedGraph
 
 # Class: DanUndirectedGraph\<I, D\>
 
-[undirected_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md).DanUndirectedGraph
+[undirected\_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md).DanUndirectedGraph
 
 The DanUndirectedGraph class handles undirected graphs
 
 ## Type parameters
 
 | Name |
-| :--- |
-| `I`  |
-| `D`  |
+| :------ |
+| `I` |
+| `D` |
 
 ## Table of contents
 
@@ -53,9 +53,9 @@ the public class constructor
 #### Type parameters
 
 | Name |
-| :--- |
-| `I`  |
-| `D`  |
+| :------ |
+| `I` |
+| `D` |
 
 #### Returns
 
@@ -63,7 +63,7 @@ the public class constructor
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:25](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L25)
+[src/undirected_graph/danUndirectedGraph.ts:25](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L25)
 
 ## Properties
 
@@ -73,23 +73,23 @@ the public class constructor
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:20](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L20)
+[src/undirected_graph/danUndirectedGraph.ts:20](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L20)
 
 ## Methods
 
 ### \_checkForCycle
 
-▸ **\_checkForCycle**(`visitedNodes`, `nextNode`, `fromNode?`): `boolean`
+▸ **_checkForCycle**(`visitedNodes`, `nextNode`, `fromNode?`): `boolean`
 
 Recursively checks for the presence of a cycle starting from node id nextNode
 
 #### Parameters
 
-| Name           | Type               | Default value | Description                          |
-| :------------- | :----------------- | :------------ | :----------------------------------- |
-| `visitedNodes` | `Set`\<`I`\>       | `undefined`   | the nodes already visited            |
-| `nextNode`     | `I`                | `undefined`   | the next node to visit               |
-| `fromNode`     | `undefined` \| `I` | `undefined`   | the parent node (default: undefined) |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `visitedNodes` | `Set`\<`I`\> | `undefined` | the nodes already visited |
+| `nextNode` | `I` | `undefined` | the next node to visit |
+| `fromNode` | `undefined` \| `I` | `undefined` | the parent node (default: undefined) |
 
 #### Returns
 
@@ -99,13 +99,13 @@ true if a cycle is found, false if no cycle is found
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:214](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L214)
+[src/undirected_graph/danUndirectedGraph.ts:214](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L214)
 
----
+___
 
 ### \_getANode
 
-▸ **\_getANode**(): `undefined` \| [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\>
+▸ **_getANode**(): `undefined` \| [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\>
 
 Get a node in the graph
 
@@ -117,21 +117,21 @@ a node in the graph or undefined if the graph is empty
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:183](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L183)
+[src/undirected_graph/danUndirectedGraph.ts:183](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L183)
 
----
+___
 
 ### \_getAdjacentNodesList
 
-▸ **\_getAdjacentNodesList**(`idNode`): [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\>[]
+▸ **_getAdjacentNodesList**(`idNode`): [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\>[]
 
 Get the list of adjacent nodes of a given node identifier
 
 #### Parameters
 
-| Name     | Type | Description                 |
-| :------- | :--- | :-------------------------- |
-| `idNode` | `I`  | the id of the node to check |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the id of the node to check |
 
 #### Returns
 
@@ -141,22 +141,22 @@ the list of adjacent nodes of idNode as array of DanNode<I, D>
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:164](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L164)
+[src/undirected_graph/danUndirectedGraph.ts:164](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L164)
 
----
+___
 
 ### \_visitNodes
 
-▸ **\_visitNodes**(`visitedNodes`, `nextNode`): `void`
+▸ **_visitNodes**(`visitedNodes`, `nextNode`): `void`
 
 Protected method to visit all the neighbours of a node, given in input the node id and a previous set of visitedNodes
 
 #### Parameters
 
-| Name           | Type         | Description               |
-| :------------- | :----------- | :------------------------ |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `visitedNodes` | `Set`\<`I`\> | the nodes already visited |
-| `nextNode`     | `I`          | the next node to visit    |
+| `nextNode` | `I` | the next node to visit |
 
 #### Returns
 
@@ -164,9 +164,9 @@ Protected method to visit all the neighbours of a node, given in input the node 
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:197](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L197)
+[src/undirected_graph/danUndirectedGraph.ts:197](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L197)
 
----
+___
 
 ### addArcToNode
 
@@ -176,10 +176,10 @@ Add arc to node, given the node interface structure
 
 #### Parameters
 
-| Name       | Type                                                                                             | Description                   |
-| :--------- | :----------------------------------------------------------------------------------------------- | :---------------------------- |
-| `node`     | [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\> | the node receiving _arcToAdd_ |
-| `arcToAdd` | [`DanArc`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanArc.md)\<`I`, `D`\>   | -                             |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `node` | [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\> | the node receiving _arcToAdd_ |
+| `arcToAdd` | [`DanArc`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanArc.md)\<`I`, `D`\> | - |
 
 #### Returns
 
@@ -189,9 +189,9 @@ true if _arcToAdd_ was correctly added to the adjacent arcs of node; false if _a
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:131](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L131)
+[src/undirected_graph/danUndirectedGraph.ts:131](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L131)
 
----
+___
 
 ### addArcToNodeId
 
@@ -201,10 +201,10 @@ Add an arc to a node, given the node identifier
 
 #### Parameters
 
-| Name       | Type                                                                                           | Description                             |
-| :--------- | :--------------------------------------------------------------------------------------------- | :-------------------------------------- |
-| `idNode`   | `I`                                                                                            | the id of the node receiving _arcToAdd_ |
-| `arcToAdd` | [`DanArc`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanArc.md)\<`I`, `D`\> | the arc being added                     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the id of the node receiving _arcToAdd_ |
+| `arcToAdd` | [`DanArc`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanArc.md)\<`I`, `D`\> | the arc being added |
 
 #### Returns
 
@@ -214,9 +214,9 @@ true if _arcToAdd_ was correctly added to the adjacent arcs of idNode; false if 
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:95](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L95)
+[src/undirected_graph/danUndirectedGraph.ts:95](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L95)
 
----
+___
 
 ### addNode
 
@@ -226,8 +226,8 @@ Add a node to the graph
 
 #### Parameters
 
-| Name   | Type                                                                                             | Description     |
-| :----- | :----------------------------------------------------------------------------------------------- | :-------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `node` | [`DanNode`](../interfaces/undirected_graph_danUndirectedGraph._internal_.DanNode.md)\<`I`, `D`\> | the node to add |
 
 #### Returns
@@ -238,9 +238,9 @@ true if the node was correctly added to the graph; false if the node is already 
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:78](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L78)
+[src/undirected_graph/danUndirectedGraph.ts:78](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L78)
 
----
+___
 
 ### countNodes
 
@@ -256,9 +256,9 @@ the number of nodes in the graph
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:270](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L270)
+[src/undirected_graph/danUndirectedGraph.ts:270](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L270)
 
----
+___
 
 ### getInnerGraph
 
@@ -274,9 +274,9 @@ the inner graph Map object
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:307](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L307)
+[src/undirected_graph/danUndirectedGraph.ts:307](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L307)
 
----
+___
 
 ### isAcyclic
 
@@ -292,9 +292,9 @@ true if the graph does not contain cycles
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:250](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L250)
+[src/undirected_graph/danUndirectedGraph.ts:250](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L250)
 
----
+___
 
 ### isConnected
 
@@ -310,9 +310,9 @@ true if the graph is connected
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:237](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L237)
+[src/undirected_graph/danUndirectedGraph.ts:237](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L237)
 
----
+___
 
 ### isEmpty
 
@@ -328,9 +328,9 @@ true if the graph does not contain any node
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:278](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L278)
+[src/undirected_graph/danUndirectedGraph.ts:278](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L278)
 
----
+___
 
 ### removeNode
 
@@ -340,9 +340,9 @@ Remove the node given in input from the graph
 
 #### Parameters
 
-| Name     | Type | Description                  |
-| :------- | :--- | :--------------------------- |
-| `idNode` | `I`  | the id of the node to remove |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the id of the node to remove |
 
 #### Returns
 
@@ -352,9 +352,9 @@ true if the node is correctly removed
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:144](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L144)
+[src/undirected_graph/danUndirectedGraph.ts:144](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L144)
 
----
+___
 
 ### toString
 
@@ -364,9 +364,9 @@ The string representation of the undirected graph
 
 #### Parameters
 
-| Name             | Type      | Default value |
-| :--------------- | :-------- | :------------ |
-| `showArcDetails` | `boolean` | `false`       |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `showArcDetails` | `boolean` | `false` |
 
 #### Returns
 
@@ -376,9 +376,9 @@ the string representation of the undirected graph
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:287](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L287)
+[src/undirected_graph/danUndirectedGraph.ts:287](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L287)
 
----
+___
 
 ### generateConsecutiveNodeGraph
 
@@ -388,8 +388,8 @@ A utility public static method to generate an undirected graph with a number of 
 
 #### Parameters
 
-| Name         | Type     | Description                             |
-| :----------- | :------- | :-------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `numOfNodes` | `number` | the number of nodes of the output graph |
 
 #### Returns
@@ -400,9 +400,9 @@ an undirected graph witn _numOfNodes_ nodes
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:34](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L34)
+[src/undirected_graph/danUndirectedGraph.ts:34](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L34)
 
----
+___
 
 ### generateRandomNodeGraph
 
@@ -412,8 +412,8 @@ A utility public static method to generate an undirected graph with a number of 
 
 #### Parameters
 
-| Name         | Type     | Description                             |
-| :----------- | :------- | :-------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `numOfNodes` | `number` | the number of nodes of the output graph |
 
 #### Returns
@@ -424,4 +424,4 @@ an undirected graph witn _numOfNodes_ nodes
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:56](https://github.com/evildead/DanGraph/blob/2bfd060/src/undirected_graph/danUndirectedGraph.ts#L56)
+[src/undirected_graph/danUndirectedGraph.ts:56](https://github.com/evildead/DanGraph/blob/f53d48f/src/undirected_graph/danUndirectedGraph.ts#L56)

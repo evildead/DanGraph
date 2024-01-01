@@ -1,13 +1,13 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [directed_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md) / [\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md) / IteratorYieldResult
+[dangraph](../README.md) / [Exports](../modules.md) / [directed\_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md) / [\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md) / IteratorYieldResult
 
 # Interface: IteratorYieldResult\<TYield\>
 
-[directed_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md).[\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md).IteratorYieldResult
+[directed\_graph/danDirectedGraphDepthFirstIterator](../modules/directed_graph_danDirectedGraphDepthFirstIterator.md).[\<internal\>](../modules/directed_graph_danDirectedGraphDepthFirstIterator._internal_.md).IteratorYieldResult
 
 ## Type parameters
 
-| Name     |
-| :------- |
+| Name |
+| :------ |
 | `TYield` |
 
 ## Table of contents
@@ -21,13 +21,13 @@
 
 ### done
 
-• `Optional` **done**: `false`
+• `Optional` **done**: ``false``
 
 #### Defined in
 
 node_modules/typescript/lib/lib.es2015.iterable.d.ts:30
 
----
+___
 
 ### value
 

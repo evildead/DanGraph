@@ -18,8 +18,8 @@ Get a random integer number between min and max (included)
 
 #### Parameters
 
-| Name  | Type     | Description    |
-| :---- | :------- | :------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `min` | `number` | minimum number |
 | `max` | `number` | maximum number |
 
@@ -31,4 +31,4 @@ an integer between min and max (included)
 
 #### Defined in
 
-[src/utils/commonUtils.ts:7](https://github.com/evildead/DanGraph/blob/2bfd060/src/utils/commonUtils.ts#L7)
+[src/utils/commonUtils.ts:7](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/commonUtils.ts#L7)

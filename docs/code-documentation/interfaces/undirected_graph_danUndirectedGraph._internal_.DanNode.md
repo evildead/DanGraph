@@ -1,8 +1,8 @@
-[dangraph](../README.md) / [Exports](../modules.md) / [undirected_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md) / [\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md) / DanNode
+[dangraph](../README.md) / [Exports](../modules.md) / [undirected\_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md) / [\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md) / DanNode
 
 # Interface: DanNode\<I, D\>
 
-[undirected_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md).[\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md).DanNode
+[undirected\_graph/danUndirectedGraph](../modules/undirected_graph_danUndirectedGraph.md).[\<internal\>](../modules/undirected_graph_danUndirectedGraph._internal_.md).DanNode
 
 The DanNode interface represents a graph node.
 It contains a node identifier and may contain additional data.
@@ -10,9 +10,9 @@ It contains a node identifier and may contain additional data.
 ## Type parameters
 
 | Name |
-| :--- |
-| `I`  |
-| `D`  |
+| :------ |
+| `I` |
+| `D` |
 
 ## Table of contents
 
@@ -34,9 +34,9 @@ It contains a node identifier and may contain additional data.
 
 #### Defined in
 
-[src/commons.ts:7](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L7)
+[src/commons.ts:7](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L7)
 
----
+___
 
 ### id
 
@@ -44,7 +44,7 @@ It contains a node identifier and may contain additional data.
 
 #### Defined in
 
-[src/commons.ts:6](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L6)
+[src/commons.ts:6](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L6)
 
 ## Methods
 
@@ -58,9 +58,9 @@ It contains a node identifier and may contain additional data.
 
 #### Defined in
 
-[src/commons.ts:9](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L9)
+[src/commons.ts:9](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L9)
 
----
+___
 
 ### toString
 
@@ -68,8 +68,8 @@ It contains a node identifier and may contain additional data.
 
 #### Parameters
 
-| Name          | Type      |
-| :------------ | :-------- |
+| Name | Type |
+| :------ | :------ |
 | `showDetails` | `boolean` |
 
 #### Returns
@@ -78,4 +78,4 @@ It contains a node identifier and may contain additional data.
 
 #### Defined in
 
-[src/commons.ts:10](https://github.com/evildead/DanGraph/blob/2bfd060/src/commons.ts#L10)
+[src/commons.ts:10](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L10)
