@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unpublished-import */
 // mocha
 import 'mocha';
 
@@ -104,7 +105,9 @@ describe('Test the DanDirectedGraph', (): void => {
       new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }),
       DirectedGraph.ArcType.outgoing
     );
+    expect(myGraph.hasNodeId(6)).to.be.true;
     myGraph.removeNode(6);
+    expect(myGraph.hasNodeId(6)).to.be.false;
     myGraph.countNodes().should.equal(5);
     const graphStr = myGraph.toString();
     console.log(graphStr);
@@ -532,13 +535,11 @@ describe('Test the DanDirectedGraph', (): void => {
     myGraph.countNodes().should.equal(1000);
     const sourceConnected = myGraph.sourceConnectedToAllNodes(0);
     const isAcyclic = myGraph.isAcyclic();
-    console.log(
-      `${
-        sourceConnected
-          ? 'node 0 HAS a path to all of the other nodes in the graph'
-          : 'node 0 DOES NOT HAVE a path to all of the other nodes in the graph'
-      }`
-    );
+    if (sourceConnected) {
+      console.log('node 0 HAS a path to all of the other nodes in the graph');
+    } else {
+      console.log('node 0 DOES NOT HAVE a path to all of the other nodes in the graph');
+    }
     console.log(`${isAcyclic ? 'the graph is acyclic' : 'the graph is not acyclic'}`);
   });
 

@@ -37,6 +37,7 @@ The class DanDirectedGraph handles directed graphs
 - [getBreadthFirstIterator](directed_graph_danDirectedGraph.DanDirectedGraph.md#getbreadthfirstiterator)
 - [getDepthFirstIterator](directed_graph_danDirectedGraph.DanDirectedGraph.md#getdepthfirstiterator)
 - [getNodeAndDirectedArcsFromNodeId](directed_graph_danDirectedGraph.DanDirectedGraph.md#getnodeanddirectedarcsfromnodeid)
+- [hasNodeId](directed_graph_danDirectedGraph.DanDirectedGraph.md#hasnodeid)
 - [isAcyclic](directed_graph_danDirectedGraph.DanDirectedGraph.md#isacyclic)
 - [isEmpty](directed_graph_danDirectedGraph.DanDirectedGraph.md#isempty)
 - [isNodeALeaf](directed_graph_danDirectedGraph.DanDirectedGraph.md#isnodealeaf)
@@ -67,7 +68,7 @@ the public class constructor
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:41](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L41)
+[src/directed_graph/danDirectedGraph.ts:41](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L41)
 
 ## Properties
 
@@ -77,7 +78,7 @@ the public class constructor
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:36](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L36)
+[src/directed_graph/danDirectedGraph.ts:36](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L36)
 
 ## Methods
 
@@ -95,7 +96,7 @@ the first leaf found, or undefined if no leaf is found
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:250](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L250)
+[src/directed_graph/danDirectedGraph.ts:246](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L246)
 
 ___
 
@@ -113,7 +114,7 @@ a copy of the inner graph structure
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:95](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L95)
+[src/directed_graph/danDirectedGraph.ts:95](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L95)
 
 ___
 
@@ -137,7 +138,7 @@ the list of outgoing nodes of idNode as array of DanNode<I, D>
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:310](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L310)
+[src/directed_graph/danDirectedGraph.ts:306](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L306)
 
 ___
 
@@ -157,7 +158,7 @@ true if the graph does not contain cycles, otherwise false
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:331](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L331)
+[src/directed_graph/danDirectedGraph.ts:327](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L327)
 
 ___
 
@@ -180,7 +181,7 @@ Protected method to visit all the neighbours of a node, given in input the node 
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:367](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L367)
+[src/directed_graph/danDirectedGraph.ts:363](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L363)
 
 ___
 
@@ -206,7 +207,7 @@ true if _arcToAdd_ was correctly added to the icoming/ougoing arcs of node; fals
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:195](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L195)
+[src/directed_graph/danDirectedGraph.ts:191](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L191)
 
 ___
 
@@ -232,7 +233,7 @@ true if _arcToAdd_ was correctly added to the icoming/ougoing arcs of idNode; fa
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:136](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L136)
+[src/directed_graph/danDirectedGraph.ts:132](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L132)
 
 ___
 
@@ -256,7 +257,7 @@ true if the node was correctly added to the graph; false if the node is already 
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:117](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L117)
+[src/directed_graph/danDirectedGraph.ts:113](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L113)
 
 ___
 
@@ -274,7 +275,7 @@ the number of nodes in the graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:293](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L293)
+[src/directed_graph/danDirectedGraph.ts:289](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L289)
 
 ___
 
@@ -298,7 +299,7 @@ the breadth-first iterator
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:407](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L407)
+[src/directed_graph/danDirectedGraph.ts:403](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L403)
 
 ___
 
@@ -322,7 +323,7 @@ the depth-first iterator
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:398](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L398)
+[src/directed_graph/danDirectedGraph.ts:394](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L394)
 
 ___
 
@@ -346,7 +347,31 @@ node and directed arcs structure or undefined if nodeId is not present in the gr
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:104](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L104)
+[src/directed_graph/danDirectedGraph.ts:104](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L104)
+
+___
+
+### hasNodeId
+
+▸ **hasNodeId**(`idNode`): `boolean`
+
+Check if idNode is present in the graph
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `idNode` | `I` | the id of the node |
+
+#### Returns
+
+`boolean`
+
+true only if idNode is present
+
+#### Defined in
+
+[src/directed_graph/danDirectedGraph.ts:412](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L412)
 
 ___
 
@@ -367,7 +392,7 @@ true if the graph does not contain cycles
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:352](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L352)
+[src/directed_graph/danDirectedGraph.ts:348](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L348)
 
 ___
 
@@ -385,7 +410,7 @@ true if the graph does not contain any node
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:301](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L301)
+[src/directed_graph/danDirectedGraph.ts:297](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L297)
 
 ___
 
@@ -409,7 +434,7 @@ true if the node is a leaf (no outgoing arcs)
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:233](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L233)
+[src/directed_graph/danDirectedGraph.ts:229](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L229)
 
 ___
 
@@ -433,7 +458,7 @@ true if the node is correctly removed
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:208](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L208)
+[src/directed_graph/danDirectedGraph.ts:204](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L204)
 
 ___
 
@@ -457,7 +482,7 @@ true if source can reach all of the nodes in the graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:382](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L382)
+[src/directed_graph/danDirectedGraph.ts:378](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L378)
 
 ___
 
@@ -481,7 +506,7 @@ the string representation of the directed graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:265](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L265)
+[src/directed_graph/danDirectedGraph.ts:261](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L261)
 
 ___
 
@@ -505,7 +530,7 @@ a directed graph witn _numOfNodes_ nodes
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:50](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L50)
+[src/directed_graph/danDirectedGraph.ts:50](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L50)
 
 ___
 
@@ -529,4 +554,4 @@ a directed graph witn _numOfNodes_ nodes
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:73](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraph.ts#L73)
+[src/directed_graph/danDirectedGraph.ts:73](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L73)

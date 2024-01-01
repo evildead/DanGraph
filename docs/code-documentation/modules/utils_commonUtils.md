@@ -31,4 +31,4 @@ an integer between min and max (included)
 
 #### Defined in
 
-[src/utils/commonUtils.ts:7](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/commonUtils.ts#L7)
+[src/utils/commonUtils.ts:7](https://github.com/evildead/DanGraph/blob/81ddea9/src/utils/commonUtils.ts#L7)

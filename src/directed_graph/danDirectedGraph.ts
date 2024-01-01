@@ -102,11 +102,7 @@ export class DanDirectedGraph<I, D> {
    * @returns {DanNodeAndDirectedArcs<I, D>|undefined} node and directed arcs structure or undefined if nodeId is not present in the graph
    */
   public getNodeAndDirectedArcsFromNodeId(idNode: I): DanNodeAndDirectedArcs<I, D> | undefined {
-    // idNode is not present in the graph
-    if (!this._graph.has(idNode)) {
-      return undefined;
-    }
-    return this._graph.get(idNode) as DanNodeAndDirectedArcs<I, D>;
+    return this._graph.get(idNode);
   }
 
   /**
@@ -406,5 +402,14 @@ export class DanDirectedGraph<I, D> {
    */
   public getBreadthFirstIterator(startingNodeId: I): GraphIterator<DanNode<I, D>> {
     return new DanDirectedGraphBreadthFirstIterator<I, D>(this, startingNodeId);
+  }
+
+  /**
+   * Check if idNode is present in the graph
+   * @param {I} idNode the id of the node
+   * @returns true only if idNode is present
+   */
+  public hasNodeId(idNode: I): boolean {
+    return this._graph.has(idNode);
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unpublished-import */
 // mocha
 import 'mocha';
 
@@ -48,7 +49,9 @@ describe('Test the DanUndirectedGraph', (): void => {
     myGraph.addArcToNode(new CDanNode({ id: 5 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }));
     myGraph.addArcToNode(new CDanNode({ id: 4 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 6 }) }));
     myGraph.addArcToNode(new CDanNode({ id: 6 }), new CDanArc({ weight: 1, node: new CDanNode({ id: 3 }) }));
+    expect(myGraph.hasNodeId(2)).to.be.true;
     myGraph.removeNode(2);
+    expect(myGraph.hasNodeId(2)).to.be.false;
     myGraph.countNodes().should.equal(5);
     const graphStr = myGraph.toString();
     console.log(graphStr);
@@ -65,6 +68,9 @@ describe('Test the DanUndirectedGraph', (): void => {
     myGraph.countNodes().should.equal(9);
     myGraph.isConnected().should.equal(false);
     const graphStr = myGraph.toString();
+    const nodeAndArcs = myGraph.getNodeAndUndirectedArcsFromNodeId(1);
+    expect(nodeAndArcs?.node.id).to.eq(1);
+    expect(nodeAndArcs?.adjacents.size).to.eq(2);
     console.log(graphStr);
   });
 
