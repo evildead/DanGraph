@@ -21,7 +21,7 @@ The directed arc type: incoming or outgoing
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:28](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L28)
+[src/directed_graph/danDirectedGraph.ts:28](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraph.ts#L28)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:29](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L29)
+[src/directed_graph/danDirectedGraph.ts:29](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraph.ts#L29)

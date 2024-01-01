@@ -29,7 +29,7 @@ and its arcs (Map<I, DanArc<I, D>>)
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:16](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L16)
+[src/undirected_graph/danUndirectedGraph.ts:16](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L16)
 
 ___
 
@@ -39,4 +39,4 @@ ___
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:15](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L15)
+[src/undirected_graph/danUndirectedGraph.ts:15](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L15)

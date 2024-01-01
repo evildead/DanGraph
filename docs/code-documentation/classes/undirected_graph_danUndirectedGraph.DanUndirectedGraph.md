@@ -65,7 +65,7 @@ the public class constructor
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:28](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L28)
+[src/undirected_graph/danUndirectedGraph.ts:28](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L28)
 
 ## Properties
 
@@ -75,7 +75,7 @@ the public class constructor
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:23](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L23)
+[src/undirected_graph/danUndirectedGraph.ts:23](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L23)
 
 ## Methods
 
@@ -101,7 +101,7 @@ true if a cycle is found, false if no cycle is found
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:217](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L217)
+[src/undirected_graph/danUndirectedGraph.ts:217](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L217)
 
 ___
 
@@ -119,7 +119,7 @@ a node in the graph or undefined if the graph is empty
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:186](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L186)
+[src/undirected_graph/danUndirectedGraph.ts:186](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L186)
 
 ___
 
@@ -143,7 +143,7 @@ the list of adjacent nodes of idNode as array of DanNode<I, D>
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:167](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L167)
+[src/undirected_graph/danUndirectedGraph.ts:167](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L167)
 
 ___
 
@@ -161,7 +161,7 @@ a copy of the inner graph structure
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:310](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L310)
+[src/undirected_graph/danUndirectedGraph.ts:310](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L310)
 
 ___
 
@@ -184,7 +184,7 @@ Protected method to visit all the neighbours of a node, given in input the node 
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:200](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L200)
+[src/undirected_graph/danUndirectedGraph.ts:200](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L200)
 
 ___
 
@@ -209,7 +209,7 @@ true if _arcToAdd_ was correctly added to the adjacent arcs of node; false if _a
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:134](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L134)
+[src/undirected_graph/danUndirectedGraph.ts:134](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L134)
 
 ___
 
@@ -234,7 +234,7 @@ true if _arcToAdd_ was correctly added to the adjacent arcs of idNode; false if 
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:98](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L98)
+[src/undirected_graph/danUndirectedGraph.ts:98](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L98)
 
 ___
 
@@ -258,7 +258,7 @@ true if the node was correctly added to the graph; false if the node is already 
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:81](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L81)
+[src/undirected_graph/danUndirectedGraph.ts:81](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L81)
 
 ___
 
@@ -276,7 +276,7 @@ the number of nodes in the graph
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:273](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L273)
+[src/undirected_graph/danUndirectedGraph.ts:273](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L273)
 
 ___
 
@@ -300,7 +300,7 @@ node and undirected arcs structure or undefined if nodeId is not present in the 
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:319](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L319)
+[src/undirected_graph/danUndirectedGraph.ts:319](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L319)
 
 ___
 
@@ -324,7 +324,7 @@ true only if idNode is present
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:328](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L328)
+[src/undirected_graph/danUndirectedGraph.ts:328](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L328)
 
 ___
 
@@ -342,7 +342,7 @@ true if the graph does not contain cycles
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:253](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L253)
+[src/undirected_graph/danUndirectedGraph.ts:253](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L253)
 
 ___
 
@@ -360,7 +360,7 @@ true if the graph is connected
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:240](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L240)
+[src/undirected_graph/danUndirectedGraph.ts:240](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L240)
 
 ___
 
@@ -378,7 +378,7 @@ true if the graph does not contain any node
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:281](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L281)
+[src/undirected_graph/danUndirectedGraph.ts:281](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L281)
 
 ___
 
@@ -402,7 +402,7 @@ true if the node is correctly removed
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:147](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L147)
+[src/undirected_graph/danUndirectedGraph.ts:147](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L147)
 
 ___
 
@@ -426,7 +426,7 @@ the string representation of the undirected graph
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:290](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L290)
+[src/undirected_graph/danUndirectedGraph.ts:290](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L290)
 
 ___
 
@@ -450,7 +450,7 @@ an undirected graph witn _numOfNodes_ nodes
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:37](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L37)
+[src/undirected_graph/danUndirectedGraph.ts:37](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L37)
 
 ___
 
@@ -474,4 +474,4 @@ an undirected graph witn _numOfNodes_ nodes
 
 #### Defined in
 
-[src/undirected_graph/danUndirectedGraph.ts:59](https://github.com/evildead/DanGraph/blob/81ddea9/src/undirected_graph/danUndirectedGraph.ts#L59)
+[src/undirected_graph/danUndirectedGraph.ts:59](https://github.com/evildead/DanGraph/blob/355b956/src/undirected_graph/danUndirectedGraph.ts#L59)

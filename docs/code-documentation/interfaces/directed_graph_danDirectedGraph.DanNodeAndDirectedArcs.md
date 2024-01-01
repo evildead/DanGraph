@@ -30,7 +30,7 @@ and its incoming and outgoing arcs (Map<I, DanArc<I, D>>)
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:20](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L20)
+[src/directed_graph/danDirectedGraph.ts:20](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraph.ts#L20)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:19](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L19)
+[src/directed_graph/danDirectedGraph.ts:19](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraph.ts#L19)
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraph.ts:21](https://github.com/evildead/DanGraph/blob/81ddea9/src/directed_graph/danDirectedGraph.ts#L21)
+[src/directed_graph/danDirectedGraph.ts:21](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraph.ts#L21)

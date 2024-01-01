@@ -35,7 +35,7 @@ It contains a node structure, the arc weight and may contain an array of string 
 
 #### Defined in
 
-[src/commons.ts:19](https://github.com/evildead/DanGraph/blob/81ddea9/src/commons.ts#L19)
+[src/commons.ts:19](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L19)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/commons.ts:20](https://github.com/evildead/DanGraph/blob/81ddea9/src/commons.ts#L20)
+[src/commons.ts:20](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L20)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/commons.ts:18](https://github.com/evildead/DanGraph/blob/81ddea9/src/commons.ts#L18)
+[src/commons.ts:18](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L18)
 
 ## Methods
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/commons.ts:22](https://github.com/evildead/DanGraph/blob/81ddea9/src/commons.ts#L22)
+[src/commons.ts:22](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L22)
 
 ___
 
@@ -95,4 +95,4 @@ ___
 
 #### Defined in
 
-[src/commons.ts:23](https://github.com/evildead/DanGraph/blob/81ddea9/src/commons.ts#L23)
+[src/commons.ts:23](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L23)

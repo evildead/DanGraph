@@ -47,4 +47,4 @@ Read more about
 
 ## Breaking changes in all versions
 
-[Code documentation](docs/breakingChanges.md)
+[Breaking changes](docs/breakingChanges.md)
