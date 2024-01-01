@@ -54,7 +54,7 @@ The public class constructor
 
 #### Defined in
 
-[src/utils/danStack.ts:26](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L26)
+[src/utils/danStack.ts:26](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L26)
 
 ## Properties
 
@@ -64,7 +64,7 @@ The public class constructor
 
 #### Defined in
 
-[src/utils/danStack.ts:21](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L21)
+[src/utils/danStack.ts:21](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L21)
 
 ## Methods
 
@@ -85,7 +85,7 @@ We use the 'splice' method of the private member '_list'
 
 #### Defined in
 
-[src/utils/danStack.ts:73](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L73)
+[src/utils/danStack.ts:73](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L73)
 
 ___
 
@@ -109,7 +109,7 @@ true if the stack is empty; it returns false is the stack is not empty
 
 #### Defined in
 
-[src/utils/danStack.ts:65](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L65)
+[src/utils/danStack.ts:65](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L65)
 
 ___
 
@@ -131,7 +131,7 @@ the element on top of the stack if the stack is not empty; conversely it returns
 
 #### Defined in
 
-[src/utils/danStack.ts:52](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L52)
+[src/utils/danStack.ts:52](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L52)
 
 ___
 
@@ -154,7 +154,7 @@ the element on top of the stack if the stack is not empty; conversely it returns
 
 #### Defined in
 
-[src/utils/danStack.ts:44](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L44)
+[src/utils/danStack.ts:44](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L44)
 
 ___
 
@@ -181,4 +181,4 @@ We use the 'push' method of the private member '_list'
 
 #### Defined in
 
-[src/utils/danStack.ts:35](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L35)
+[src/utils/danStack.ts:35](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L35)

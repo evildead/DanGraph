@@ -42,3 +42,7 @@ Read more about
 ### Build documentation
 
 `npm run build:doc`
+
+## Breaking changes in all versions
+
+[Breaking changes](docs/breakingChanges.md)

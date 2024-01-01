@@ -38,7 +38,7 @@ The GraphIterator interface
 
 #### Defined in
 
-[src/commons.ts:31](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L31)
+[src/commons.ts:31](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L31)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/commons.ts:37](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L37)
+[src/commons.ts:37](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L37)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[src/commons.ts:34](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L34)
+[src/commons.ts:34](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L34)
 
 ___
 
@@ -80,4 +80,4 @@ ___
 
 #### Defined in
 
-[src/commons.ts:40](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L40)
+[src/commons.ts:40](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L40)

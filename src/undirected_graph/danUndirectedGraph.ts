@@ -1,3 +1,6 @@
+// Lodash
+import _ from 'lodash';
+
 // common interfaces, classes, ...
 import { DanNode, DanArc, CDanNode, CDanArc } from '../commons';
 
@@ -301,10 +304,28 @@ export class DanUndirectedGraph<I, D> {
   }
 
   /**
-   * Get the inner graph object
-   * @returns {Map<I, DanNodeAndUndirectedArcs<I, D>>} the inner graph Map object
+   * Clone the inner graph structure
+   * @returns {Map<I, DanNodeAndUndirectedArcs<I, D>>} a copy of the inner graph structure
    */
-  public getInnerGraph(): Map<I, DanNodeAndUndirectedArcs<I, D>> {
-    return this._graph;
+  protected _getCopyOfInnerGraph(): Map<I, DanNodeAndUndirectedArcs<I, D>> {
+    return _.cloneDeep(this._graph);
+  }
+
+  /**
+   * Get node and undirected arcs structure (as DanNodeAndUndirectedArcs) from nodeId
+   * @param {I} idNode the node identifier
+   * @returns {DanNodeAndUndirectedArcs<I, D>|undefined} node and undirected arcs structure or undefined if nodeId is not present in the graph
+   */
+  public getNodeAndUndirectedArcsFromNodeId(idNode: I): DanNodeAndUndirectedArcs<I, D> | undefined {
+    return this._graph.get(idNode);
+  }
+
+  /**
+   * Check if idNode is present in the graph
+   * @param {I} idNode the id of the node
+   * @returns true only if idNode is present
+   */
+  public hasNodeId(idNode: I): boolean {
+    return this._graph.has(idNode);
   }
 }

@@ -34,7 +34,7 @@ It contains a node identifier and may contain additional data.
 
 #### Defined in
 
-[src/commons.ts:7](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L7)
+[src/commons.ts:7](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L7)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/commons.ts:6](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L6)
+[src/commons.ts:6](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L6)
 
 ## Methods
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-[src/commons.ts:9](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L9)
+[src/commons.ts:9](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L9)
 
 ___
 
@@ -78,4 +78,4 @@ ___
 
 #### Defined in
 
-[src/commons.ts:10](https://github.com/evildead/DanGraph/blob/f53d48f/src/commons.ts#L10)
+[src/commons.ts:10](https://github.com/evildead/DanGraph/blob/355b956/src/commons.ts#L10)

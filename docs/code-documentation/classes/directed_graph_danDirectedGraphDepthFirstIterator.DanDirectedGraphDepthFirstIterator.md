@@ -74,7 +74,7 @@ exception if startingNodeId was not found in graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:33](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L33)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:33](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L33)
 
 ## Properties
 
@@ -84,7 +84,7 @@ exception if startingNodeId was not found in graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:21](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L21)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:21](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L21)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:15](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L15)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:15](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L15)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:23](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L23)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:23](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L23)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:25](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L25)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:25](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L25)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:19](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L19)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:19](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L19)
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:17](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L17)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:17](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L17)
 
 ## Methods
 
@@ -150,7 +150,7 @@ Advance to the next node in a depth first fashion
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:111](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L111)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:111](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L111)
 
 ___
 
@@ -178,7 +178,7 @@ exception if nodeId was not found in graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:46](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L46)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:46](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L46)
 
 ___
 
@@ -204,7 +204,7 @@ exception if startingNodeId was not found in graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:59](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L59)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:59](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L59)
 
 ___
 
@@ -228,7 +228,7 @@ exception if this._currentNodeId was not found in graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:78](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L78)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:78](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L78)
 
 ___
 
@@ -250,7 +250,7 @@ true if the iterator can step to a next node, false if there are no more nodes l
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:160](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L160)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:160](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L160)
 
 ___
 
@@ -274,7 +274,7 @@ exception if this._nextNodeId was not found in graph
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:91](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L91)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:91](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L91)
 
 ___
 
@@ -294,4 +294,4 @@ Restart the iterator
 
 #### Defined in
 
-[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:167](https://github.com/evildead/DanGraph/blob/f53d48f/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L167)
+[src/directed_graph/danDirectedGraphDepthFirstIterator.ts:167](https://github.com/evildead/DanGraph/blob/355b956/src/directed_graph/danDirectedGraphDepthFirstIterator.ts#L167)

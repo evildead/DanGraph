@@ -43,7 +43,7 @@ clear   -> clear all stack's elements
 
 #### Defined in
 
-[src/utils/danStack.ts:14](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L14)
+[src/utils/danStack.ts:14](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L14)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/utils/danStack.ts:13](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L13)
+[src/utils/danStack.ts:13](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L13)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[src/utils/danStack.ts:12](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L12)
+[src/utils/danStack.ts:12](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L12)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/utils/danStack.ts:11](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L11)
+[src/utils/danStack.ts:11](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L11)
 
 ___
 
@@ -105,4 +105,4 @@ ___
 
 #### Defined in
 
-[src/utils/danStack.ts:10](https://github.com/evildead/DanGraph/blob/f53d48f/src/utils/danStack.ts#L10)
+[src/utils/danStack.ts:10](https://github.com/evildead/DanGraph/blob/355b956/src/utils/danStack.ts#L10)
