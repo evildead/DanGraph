@@ -12,8 +12,9 @@
     "rimraf": "./node_modules/rimraf/bin.js",
     "clean": "rimraf build/",
     "build": "npm run clean && tsc && npm i --package-lock-only",
+    "format": "prettier --write .",
     "prepublishOnly": "npm test",
-    "build:doc": "jsdoc2md --files ./src/*/*.ts --configure ./jsdoc2md.json > ./docs/code-documentation.md",
+    "build:doc": "typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-missing-exports --out ./docs/code-documentation ./src/*/*.ts",
     "lint": "eslint ./src --ext ts",
     "lint-fix": "eslint ./src --fix --cache"
   },
@@ -48,13 +49,14 @@
     "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-security": "^2.1.0",
-    "jsdoc-babel": "^0.5.0",
-    "jsdoc-to-markdown": "^5.0.3",
     "mocha": "^8.3.2",
     "nodemon": "^3.0.2",
     "prettier": "^3.1.1",
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.2",
+    "typedoc": "^0.25.4",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typedoc-plugin-missing-exports": "^2.1.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {

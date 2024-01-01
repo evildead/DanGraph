@@ -1,9 +1,11 @@
 # Undirected graph
 
 ## Definition
-[Wikipedia - Undirected graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))
+
+[Wikipedia - Undirected graph](<https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)>)
 
 ## Examples
+
 ### The following graph is acyclic and not connected:
 
 ![Undirected acyclic not-connected graph](images/undirected-graph_acyclic_not-connected.png)
